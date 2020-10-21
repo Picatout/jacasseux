@@ -1,0 +1,488 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[p mainexit ]
+"589 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 589: extern volatile unsigned char OSCCON __attribute__((address(0x010)));
+[v _OSCCON `Vuc ~T0 @X0 0 e@16 ]
+"259
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 259: extern volatile unsigned char ANSELA __attribute__((address(0x008)));
+[v _ANSELA `Vuc ~T0 @X0 0 e@8 ]
+"493
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 493: extern volatile unsigned char OPTION_REG __attribute__((address(0x00E)));
+[v _OPTION_REG `Vuc ~T0 @X0 0 e@14 ]
+"195
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 195: extern volatile unsigned char TRISA __attribute__((address(0x006)));
+[v _TRISA `Vuc ~T0 @X0 0 e@6 ]
+"227
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 227: extern volatile unsigned char LATA __attribute__((address(0x007)));
+[v _LATA `Vuc ~T0 @X0 0 e@7 ]
+"157
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 157: extern volatile unsigned char PORTA __attribute__((address(0x005)));
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"291
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 291: extern volatile unsigned char WPUA __attribute__((address(0x009)));
+[v _WPUA `Vuc ~T0 @X0 0 e@9 ]
+"840
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 840: extern volatile unsigned char PWM1CON __attribute__((address(0x016)));
+[v _PWM1CON `Vuc ~T0 @X0 0 e@22 ]
+"663
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 663: extern volatile unsigned char T2CON __attribute__((address(0x013)));
+[v _T2CON `Vuc ~T0 @X0 0 e@19 ]
+"656
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 656: extern volatile unsigned char PR2 __attribute__((address(0x012)));
+[v _PR2 `Vuc ~T0 @X0 0 e@18 ]
+"770
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 770: extern volatile unsigned char PWM1DCH __attribute__((address(0x015)));
+[v _PWM1DCH `Vuc ~T0 @X0 0 e@21 ]
+"734
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 734: extern volatile unsigned char PWM1DCL __attribute__((address(0x014)));
+[v _PWM1DCL `Vuc ~T0 @X0 0 e@20 ]
+"1902
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1902: extern volatile unsigned char NCO1CLK __attribute__((address(0x02E)));
+[v _NCO1CLK `Vuc ~T0 @X0 0 e@46 ]
+"1857
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1857: extern volatile unsigned char NCO1CON __attribute__((address(0x02D)));
+[v _NCO1CON `Vuc ~T0 @X0 0 e@45 ]
+"2429
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 2429: extern volatile unsigned char CLC1GLS0 __attribute__((address(0x035)));
+[v _CLC1GLS0 `Vuc ~T0 @X0 0 e@53 ]
+"2541
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 2541: extern volatile unsigned char CLC1GLS1 __attribute__((address(0x036)));
+[v _CLC1GLS1 `Vuc ~T0 @X0 0 e@54 ]
+"2653
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 2653: extern volatile unsigned char CLC1GLS2 __attribute__((address(0x037)));
+[v _CLC1GLS2 `Vuc ~T0 @X0 0 e@55 ]
+"2765
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 2765: extern volatile unsigned char CLC1GLS3 __attribute__((address(0x038)));
+[v _CLC1GLS3 `Vuc ~T0 @X0 0 e@56 ]
+"2141
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 2141: extern volatile unsigned char CLC1SEL0 __attribute__((address(0x032)));
+[v _CLC1SEL0 `Vuc ~T0 @X0 0 e@50 ]
+"2246
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 2246: extern volatile unsigned char CLC1SEL1 __attribute__((address(0x033)));
+[v _CLC1SEL1 `Vuc ~T0 @X0 0 e@51 ]
+"2351
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 2351: extern volatile unsigned char CLC1POL __attribute__((address(0x034)));
+[v _CLC1POL `Vuc ~T0 @X0 0 e@52 ]
+"2021
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 2021: extern volatile unsigned char CLC1CON __attribute__((address(0x031)));
+[v _CLC1CON `Vuc ~T0 @X0 0 e@49 ]
+"59
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 59: extern volatile unsigned char TMR0 __attribute__((address(0x001)));
+[v _TMR0 `Vuc ~T0 @X0 0 e@1 ]
+"1726
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1726: extern volatile unsigned char NCO1INCL __attribute__((address(0x02A)));
+[v _NCO1INCL `Vuc ~T0 @X0 0 e@42 ]
+"1788
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1788: extern volatile unsigned char NCO1INCH __attribute__((address(0x02B)));
+[v _NCO1INCH `Vuc ~T0 @X0 0 e@43 ]
+"9 blink.c
+[p x FOSC = INTOSC ]
+"10
+[p x BOREN = OFF ]
+"11
+[p x WDTE = OFF ]
+"12
+[p x PWRTE = OFF ]
+"13
+[p x MCLRE = ON ]
+"14
+[p x CP = OFF ]
+"15
+[p x LVP = OFF ]
+"16
+[p x LPBOR = ON ]
+"17
+[p x BORV = LO ]
+"18
+[p x WRT = OFF ]
+"54 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 54: __asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+"61
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 61: __asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+"68
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 68: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"75
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 75: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"152
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 152: __asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+"159
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 159: __asm("PORTA equ 05h");
+[; <" PORTA equ 05h ;# ">
+"197
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 197: __asm("TRISA equ 06h");
+[; <" TRISA equ 06h ;# ">
+"229
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 229: __asm("LATA equ 07h");
+[; <" LATA equ 07h ;# ">
+"261
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 261: __asm("ANSELA equ 08h");
+[; <" ANSELA equ 08h ;# ">
+"293
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 293: __asm("WPUA equ 09h");
+[; <" WPUA equ 09h ;# ">
+"331
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 331: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"351
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 351: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"413
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 413: __asm("PIR1 equ 0Ch");
+[; <" PIR1 equ 0Ch ;# ">
+"454
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 454: __asm("PIE1 equ 0Dh");
+[; <" PIE1 equ 0Dh ;# ">
+"495
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 495: __asm("OPTION_REG equ 0Eh");
+[; <" OPTION_REG equ 0Eh ;# ">
+"565
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 565: __asm("PCON equ 0Fh");
+[; <" PCON equ 0Fh ;# ">
+"591
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 591: __asm("OSCCON equ 010h");
+[; <" OSCCON equ 010h ;# ">
+"651
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 651: __asm("TMR2 equ 011h");
+[; <" TMR2 equ 011h ;# ">
+"658
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 658: __asm("PR2 equ 012h");
+[; <" PR2 equ 012h ;# ">
+"665
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 665: __asm("T2CON equ 013h");
+[; <" T2CON equ 013h ;# ">
+"736
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 736: __asm("PWM1DCL equ 014h");
+[; <" PWM1DCL equ 014h ;# ">
+"772
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 772: __asm("PWM1DCH equ 015h");
+[; <" PWM1DCH equ 015h ;# ">
+"842
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 842: __asm("PWM1CON equ 016h");
+[; <" PWM1CON equ 016h ;# ">
+"847
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 847: __asm("PWM1CON0 equ 016h");
+[; <" PWM1CON0 equ 016h ;# ">
+"918
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 918: __asm("PWM2DCL equ 017h");
+[; <" PWM2DCL equ 017h ;# ">
+"954
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 954: __asm("PWM2DCH equ 018h");
+[; <" PWM2DCH equ 018h ;# ">
+"1024
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1024: __asm("PWM2CON equ 019h");
+[; <" PWM2CON equ 019h ;# ">
+"1029
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1029: __asm("PWM2CON0 equ 019h");
+[; <" PWM2CON0 equ 019h ;# ">
+"1100
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1100: __asm("IOCAP equ 01Ah");
+[; <" IOCAP equ 01Ah ;# ">
+"1138
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1138: __asm("IOCAN equ 01Bh");
+[; <" IOCAN equ 01Bh ;# ">
+"1176
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1176: __asm("IOCAF equ 01Ch");
+[; <" IOCAF equ 01Ch ;# ">
+"1214
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1214: __asm("FVRCON equ 01Dh");
+[; <" FVRCON equ 01Dh ;# ">
+"1273
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1273: __asm("ADRES equ 01Eh");
+[; <" ADRES equ 01Eh ;# ">
+"1280
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1280: __asm("ADCON equ 01Fh");
+[; <" ADCON equ 01Fh ;# ">
+"1357
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1357: __asm("PMADR equ 020h");
+[; <" PMADR equ 020h ;# ">
+"1364
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1364: __asm("PMADRL equ 020h");
+[; <" PMADRL equ 020h ;# ">
+"1384
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1384: __asm("PMADRH equ 021h");
+[; <" PMADRH equ 021h ;# ">
+"1404
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1404: __asm("PMDAT equ 022h");
+[; <" PMDAT equ 022h ;# ">
+"1411
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1411: __asm("PMDATL equ 022h");
+[; <" PMDATL equ 022h ;# ">
+"1431
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1431: __asm("PMDATH equ 023h");
+[; <" PMDATH equ 023h ;# ">
+"1451
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1451: __asm("PMCON1 equ 024h");
+[; <" PMCON1 equ 024h ;# ">
+"1507
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1507: __asm("PMCON2 equ 025h");
+[; <" PMCON2 equ 025h ;# ">
+"1527
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1527: __asm("CLKRCON equ 026h");
+[; <" CLKRCON equ 026h ;# ">
+"1550
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1550: __asm("NCO1ACC equ 027h");
+[; <" NCO1ACC equ 027h ;# ">
+"1557
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1557: __asm("NCO1ACCL equ 027h");
+[; <" NCO1ACCL equ 027h ;# ">
+"1619
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1619: __asm("NCO1ACCH equ 028h");
+[; <" NCO1ACCH equ 028h ;# ">
+"1681
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1681: __asm("NCO1ACCU equ 029h");
+[; <" NCO1ACCU equ 029h ;# ">
+"1721
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1721: __asm("NCO1INC equ 02Ah");
+[; <" NCO1INC equ 02Ah ;# ">
+"1728
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1728: __asm("NCO1INCL equ 02Ah");
+[; <" NCO1INCL equ 02Ah ;# ">
+"1790
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1790: __asm("NCO1INCH equ 02Bh");
+[; <" NCO1INCH equ 02Bh ;# ">
+"1852
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1852: __asm("NCO1INCU equ 02Ch");
+[; <" NCO1INCU equ 02Ch ;# ">
+"1859
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1859: __asm("NCO1CON equ 02Dh");
+[; <" NCO1CON equ 02Dh ;# ">
+"1904
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1904: __asm("NCO1CLK equ 02Eh");
+[; <" NCO1CLK equ 02Eh ;# ">
+"1964
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1964: __asm("WDTCON equ 030h");
+[; <" WDTCON equ 030h ;# ">
+"2023
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 2023: __asm("CLC1CON equ 031h");
+[; <" CLC1CON equ 031h ;# ">
+"2143
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 2143: __asm("CLC1SEL0 equ 032h");
+[; <" CLC1SEL0 equ 032h ;# ">
+"2248
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 2248: __asm("CLC1SEL1 equ 033h");
+[; <" CLC1SEL1 equ 033h ;# ">
+"2353
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 2353: __asm("CLC1POL equ 034h");
+[; <" CLC1POL equ 034h ;# ">
+"2431
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 2431: __asm("CLC1GLS0 equ 035h");
+[; <" CLC1GLS0 equ 035h ;# ">
+"2543
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 2543: __asm("CLC1GLS1 equ 036h");
+[; <" CLC1GLS1 equ 036h ;# ">
+"2655
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 2655: __asm("CLC1GLS2 equ 037h");
+[; <" CLC1GLS2 equ 037h ;# ">
+"2767
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 2767: __asm("CLC1GLS3 equ 038h");
+[; <" CLC1GLS3 equ 038h ;# ">
+"2879
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 2879: __asm("CWG1CON0 equ 039h");
+[; <" CWG1CON0 equ 039h ;# ">
+"2938
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 2938: __asm("CWG1CON1 equ 03Ah");
+[; <" CWG1CON1 equ 03Ah ;# ">
+"3009
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 3009: __asm("CWG1CON2 equ 03Bh");
+[; <" CWG1CON2 equ 03Bh ;# ">
+"3048
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 3048: __asm("CWG1DBR equ 03Ch");
+[; <" CWG1DBR equ 03Ch ;# ">
+"3106
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 3106: __asm("CWG1DBF equ 03Dh");
+[; <" CWG1DBF equ 03Dh ;# ">
+"3164
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 3164: __asm("VREGCON equ 03Eh");
+[; <" VREGCON equ 03Eh ;# ">
+"3198
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 3198: __asm("BORCON equ 03Fh");
+[; <" BORCON equ 03Fh ;# ">
+[v $root$_main `(v ~T0 @X0 0 e ]
+"29 blink.c
+[; ;blink.c: 29: void main(void) {
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"30
+[; ;blink.c: 30:     unsigned char ms_dly;
+[v _ms_dly `uc ~T0 @X0 1 a ]
+"31
+[; ;blink.c: 31:     unsigned int temp;
+[v _temp `ui ~T0 @X0 1 a ]
+"33
+[; ;blink.c: 33:     OSCCON|=(7<<4);
+[e =| _OSCCON -> << -> 7 `i -> 4 `i `Vuc ]
+"34
+[; ;blink.c: 34:     ANSELA=0;
+[e = _ANSELA -> -> 0 `i `uc ]
+"35
+[; ;blink.c: 35:     OPTION_REG&=~0xA6;
+[e =& _OPTION_REG -> ~ -> 166 `i `Vuc ]
+"36
+[; ;blink.c: 36:     TRISA&=~((1<<1)|(1<<2));
+[e =& _TRISA -> ~ | << -> 1 `i -> 1 `i << -> 1 `i -> 2 `i `Vuc ]
+"37
+[; ;blink.c: 37:     LATA&=~((1<<1)|(1<<2));
+[e =& _LATA -> ~ | << -> 1 `i -> 1 `i << -> 1 `i -> 2 `i `Vuc ]
+"38
+[; ;blink.c: 38:     PORTA&=~((1<<2));
+[e =& _PORTA -> ~ << -> 1 `i -> 2 `i `Vuc ]
+"39
+[; ;blink.c: 39:     WPUA|=(1<<2);
+[e =| _WPUA -> << -> 1 `i -> 2 `i `Vuc ]
+"41
+[; ;blink.c: 41:     PWM1CON=1;
+[e = _PWM1CON -> -> 1 `i `uc ]
+"42
+[; ;blink.c: 42:     T2CON&=0xFC;
+[e =& _T2CON -> -> 252 `i `Vuc ]
+"43
+[; ;blink.c: 43:     PR2=31;
+[e = _PR2 -> -> 31 `i `uc ]
+"44
+[; ;blink.c: 44:     PWM1DCH=16;
+[e = _PWM1DCH -> -> 16 `i `uc ]
+"45
+[; ;blink.c: 45:     PWM1DCL=0;
+[e = _PWM1DCL -> -> 0 `i `uc ]
+"46
+[; ;blink.c: 46:     T2CON|=(1<<2);
+[e =| _T2CON -> << -> 1 `i -> 2 `i `Vuc ]
+"48
+[; ;blink.c: 48:     NCO1CLK=2;
+[e = _NCO1CLK -> -> 2 `i `uc ]
+"49
+[; ;blink.c: 49:     NCO1CON=0x80;
+[e = _NCO1CON -> -> 128 `i `uc ]
+"51
+[; ;blink.c: 51:     CLC1GLS0=2;
+[e = _CLC1GLS0 -> -> 2 `i `uc ]
+"52
+[; ;blink.c: 52:     CLC1GLS1=0;
+[e = _CLC1GLS1 -> -> 0 `i `uc ]
+"53
+[; ;blink.c: 53:     CLC1GLS2=0x20;
+[e = _CLC1GLS2 -> -> 32 `i `uc ]
+"54
+[; ;blink.c: 54:     CLC1GLS3=0;
+[e = _CLC1GLS3 -> -> 0 `i `uc ]
+"55
+[; ;blink.c: 55:     CLC1SEL0=3;
+[e = _CLC1SEL0 -> -> 3 `i `uc ]
+"56
+[; ;blink.c: 56:     CLC1SEL1=5;
+[e = _CLC1SEL1 -> -> 5 `i `uc ]
+"57
+[; ;blink.c: 57:     CLC1POL=0;
+[e = _CLC1POL -> -> 0 `i `uc ]
+"58
+[; ;blink.c: 58:     CLC1CON=0xC1;
+[e = _CLC1CON -> -> 193 `i `uc ]
+"59
+[; ;blink.c: 59:     while (1){
+[e :U 145 ]
+{
+"60
+[; ;blink.c: 60:         OPTION_REG|=(1<<3);
+[e =| _OPTION_REG -> << -> 1 `i -> 3 `i `Vuc ]
+"61
+[; ;blink.c: 61:         TMR0=0;
+[e = _TMR0 -> -> 0 `i `uc ]
+"62
+[; ;blink.c: 62:         TRISA|=(1<<2);
+[e =| _TRISA -> << -> 1 `i -> 2 `i `Vuc ]
+"63
+[; ;blink.c: 63:         while (!(PORTA&(1<<2)));
+[e $U 147  ]
+[e :U 148 ]
+[e :U 147 ]
+[e $ ! != & -> _PORTA `i << -> 1 `i -> 2 `i -> 0 `i 148  ]
+[e :U 149 ]
+"64
+[; ;blink.c: 64:         TRISA&=~(1<<2);
+[e =& _TRISA -> ~ << -> 1 `i -> 2 `i `Vuc ]
+"65
+[; ;blink.c: 65:         LATA&=~(1<<2);
+[e =& _LATA -> ~ << -> 1 `i -> 2 `i `Vuc ]
+"66
+[; ;blink.c: 66:         if ((temp=TMR0)){
+[e $ ! != = _temp -> _TMR0 `ui -> -> 0 `i `ui 150  ]
+{
+"67
+[; ;blink.c: 67:             temp=(temp<<4)+((16384)&0xff);
+[e = _temp + << _temp -> 4 `i -> & -> 16384 `i -> 255 `i `ui ]
+"68
+[; ;blink.c: 68:             NCO1INCL=temp&0xff;
+[e = _NCO1INCL -> & _temp -> -> 255 `i `ui `uc ]
+"69
+[; ;blink.c: 69:             temp=(temp>>8)+((16384)>>8);
+[e = _temp + >> _temp -> 8 `i -> >> -> 16384 `i -> 8 `i `ui ]
+"70
+[; ;blink.c: 70:             NCO1INCH=temp;
+[e = _NCO1INCH -> _temp `uc ]
+"71
+[; ;blink.c: 71:         }else{
+}
+[e $U 151  ]
+[e :U 150 ]
+{
+"72
+[; ;blink.c: 72:             NCO1INCL=(unsigned char)((16384)&0x00ff);
+[e = _NCO1INCL -> & -> 16384 `i -> 255 `i `uc ]
+"73
+[; ;blink.c: 73:             NCO1INCH=(unsigned char)((16384)>>8);
+[e = _NCO1INCH -> >> -> 16384 `i -> 8 `i `uc ]
+"74
+[; ;blink.c: 74:         }
+}
+[e :U 151 ]
+"76
+[; ;blink.c: 76:         OPTION_REG&=~(1<<3);
+[e =& _OPTION_REG -> ~ << -> 1 `i -> 3 `i `Vuc ]
+"77
+[; ;blink.c: 77:         ms_dly=78;
+[e = _ms_dly -> -> 78 `i `uc ]
+"78
+[; ;blink.c: 78:         while (ms_dly--){
+[e $U 152  ]
+[e :U 153 ]
+{
+"79
+[; ;blink.c: 79:             __asm("CLRF TMR0");
+[; <" CLRF TMR0 ;# ">
+"80
+[; ;blink.c: 80:             __asm("BCF INTCON,2");
+[; <" BCF INTCON,2 ;# ">
+"81
+[; ;blink.c: 81:             __asm("BTFSS INTCON,2");
+[; <" BTFSS INTCON,2 ;# ">
+"82
+[; ;blink.c: 82:             __asm("GOTO $-1");
+[; <" GOTO $-1 ;# ">
+"83
+[; ;blink.c: 83:        }
+}
+[e :U 152 ]
+"78
+[; ;blink.c: 78:         while (ms_dly--){
+[e $ != -> -- _ms_dly -> -> 1 `i `uc `i -> 0 `i 153  ]
+[e :U 154 ]
+"84
+[; ;blink.c: 84:     }
+}
+[e :U 144 ]
+[e $U 145  ]
+[e :U 146 ]
+"85
+[; ;blink.c: 85:     return;
+[e $UE 143  ]
+"86
+[; ;blink.c: 86: }
+[e :UE 143 ]
+}

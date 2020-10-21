@@ -1,0 +1,601 @@
+
+
+Microchip MPLAB XC8 Assembler V2.20 build 20200408173844 
+                                                                                               Sun Oct 18 23:06:14 2020
+
+Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1 
+     1                           	processor	10F322
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     5                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1,noexec
+     6                           	psect	maintext,global,class=CODE,split=1,delta=2
+     7                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
+     8                           	dabs	1,0x7E,2
+     9  0000                     
+    10                           ; Version 2.20
+    11                           ; Generated 29/04/2020 GMT
+    12                           ; 
+    13                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    14                           ; All rights reserved.
+    15                           ; 
+    16                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    17                           ; 
+    18                           ; Redistribution and use in source and binary forms, with or without modification, are
+    19                           ; permitted provided that the following conditions are met:
+    20                           ; 
+    21                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    22                           ;        conditions and the following disclaimer.
+    23                           ; 
+    24                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    25                           ;        of conditions and the following disclaimer in the documentation and/or other
+    26                           ;        materials provided with the distribution.
+    27                           ; 
+    28                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    29                           ;        software without specific prior written permission.
+    30                           ; 
+    31                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    32                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    33                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    34                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    35                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    36                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    37                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    38                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    39                           ; 
+    40                           ; 
+    41                           ; Code-generator required, PIC10F322 Definitions
+    42                           ; 
+    43                           ; SFR Addresses
+    44  0000                     	;# 
+    45  0001                     	;# 
+    46  0002                     	;# 
+    47  0003                     	;# 
+    48  0004                     	;# 
+    49  0005                     	;# 
+    50  0006                     	;# 
+    51  0007                     	;# 
+    52  0008                     	;# 
+    53  0009                     	;# 
+    54  000A                     	;# 
+    55  000B                     	;# 
+    56  000C                     	;# 
+    57  000D                     	;# 
+    58  000E                     	;# 
+    59  000F                     	;# 
+    60  0010                     	;# 
+    61  0011                     	;# 
+    62  0012                     	;# 
+    63  0013                     	;# 
+    64  0014                     	;# 
+    65  0015                     	;# 
+    66  0016                     	;# 
+    67  0016                     	;# 
+    68  0017                     	;# 
+    69  0018                     	;# 
+    70  0019                     	;# 
+    71  0019                     	;# 
+    72  001A                     	;# 
+    73  001B                     	;# 
+    74  001C                     	;# 
+    75  001D                     	;# 
+    76  001E                     	;# 
+    77  001F                     	;# 
+    78  0020                     	;# 
+    79  0020                     	;# 
+    80  0021                     	;# 
+    81  0022                     	;# 
+    82  0022                     	;# 
+    83  0023                     	;# 
+    84  0024                     	;# 
+    85  0025                     	;# 
+    86  0026                     	;# 
+    87  0027                     	;# 
+    88  0027                     	;# 
+    89  0028                     	;# 
+    90  0029                     	;# 
+    91  002A                     	;# 
+    92  002A                     	;# 
+    93  002B                     	;# 
+    94  002C                     	;# 
+    95  002D                     	;# 
+    96  002E                     	;# 
+    97  0030                     	;# 
+    98  0031                     	;# 
+    99  0032                     	;# 
+   100  0033                     	;# 
+   101  0034                     	;# 
+   102  0035                     	;# 
+   103  0036                     	;# 
+   104  0037                     	;# 
+   105  0038                     	;# 
+   106  0039                     	;# 
+   107  003A                     	;# 
+   108  003B                     	;# 
+   109  003C                     	;# 
+   110  003D                     	;# 
+   111  003E                     	;# 
+   112  003F                     	;# 
+   113  002B                     _NCO1INCH	set	43
+   114  002A                     _NCO1INCL	set	42
+   115  0001                     _TMR0	set	1
+   116  0031                     _CLC1CON	set	49
+   117  0034                     _CLC1POL	set	52
+   118  0033                     _CLC1SEL1	set	51
+   119  0032                     _CLC1SEL0	set	50
+   120  0038                     _CLC1GLS3	set	56
+   121  0037                     _CLC1GLS2	set	55
+   122  0036                     _CLC1GLS1	set	54
+   123  0035                     _CLC1GLS0	set	53
+   124  002D                     _NCO1CON	set	45
+   125  002E                     _NCO1CLK	set	46
+   126  0014                     _PWM1DCL	set	20
+   127  0015                     _PWM1DCH	set	21
+   128  0012                     _PR2	set	18
+   129  0013                     _T2CON	set	19
+   130  0016                     _PWM1CON	set	22
+   131  0009                     _WPUA	set	9
+   132  0005                     _PORTA	set	5
+   133  0007                     _LATA	set	7
+   134  0006                     _TRISA	set	6
+   135  000E                     _OPTION_REG	set	14
+   136  0008                     _ANSELA	set	8
+   137  0010                     _OSCCON	set	16
+   138                           
+   139                           	psect	cinit
+   140  01FE                     start_initialization:	
+   141                           ; #config settings
+   142                           
+   143  01FE                     __initialization:
+   144  01FE                     end_of_initialization:	
+   145                           ;End of C runtime variable initialization code
+   146                           
+   147  01FE                     __end_of__initialization:
+   148  01FE  0183               	clrf	3
+   149  01FF  2971               	ljmp	_main	;jump to C main() function
+   150                           
+   151                           	psect	cstackBANK0
+   152  0040                     __pcstackBANK0:
+   153  0040                     ?_main:
+   154  0040                     ??_main:	
+   155                           ; 1 bytes @ 0x0
+   156                           
+   157                           
+   158                           ; 1 bytes @ 0x0
+   159  0040                     	ds	2
+   160  0042                     main@ms_dly:
+   161                           
+   162                           ; 1 bytes @ 0x2
+   163  0042                     	ds	1
+   164  0043                     main@temp:
+   165                           
+   166                           ; 2 bytes @ 0x3
+   167  0043                     	ds	2
+   168                           
+   169                           	psect	maintext
+   170  0171                     __pmaintext:	
+   171 ;;
+   172 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+   173 ;;
+   174 ;; *************** function _main *****************
+   175 ;; Defined at:
+   176 ;;		line 29 in file "blink.c"
+   177 ;; Parameters:    Size  Location     Type
+   178 ;;		None
+   179 ;; Auto vars:     Size  Location     Type
+   180 ;;  temp            2    3[BANK0 ] unsigned int 
+   181 ;;  ms_dly          1    2[BANK0 ] unsigned char 
+   182 ;; Return value:  Size  Location     Type
+   183 ;;                  1    wreg      void 
+   184 ;; Registers used:
+   185 ;;		wreg, status,2, status,0, btemp+1
+   186 ;; Tracked objects:
+   187 ;;		On entry : B00/0
+   188 ;;		On exit  : 0/0
+   189 ;;		Unchanged: 0/0
+   190 ;; Data sizes:     COMMON   BANK0
+   191 ;;      Params:         0       0
+   192 ;;      Locals:         0       3
+   193 ;;      Temps:          0       2
+   194 ;;      Totals:         0       5
+   195 ;;Total ram usage:        5 bytes
+   196 ;; This function calls:
+   197 ;;		Nothing
+   198 ;; This function is called by:
+   199 ;;		Startup code after reset
+   200 ;; This function uses a non-reentrant model
+   201 ;;
+   202                           
+   203                           
+   204                           ;psect for function _main
+   205  0171                     _main:
+   206  0171                     l638:	
+   207                           ;incstack = 0
+   208                           ; Regs used in _main: [wreg+status,2+status,0+btemp+1]
+   209                           
+   210                           
+   211                           ;blink.c: 30:     unsigned char ms_dly;;blink.c: 31:     unsigned int temp;;blink.c: 33:
+      +                               OSCCON|=(7<<4);
+   212  0171  3070               	movlw	112
+   213  0172  00FF               	movwf	btemp+1
+   214  0173  087F               	movf	btemp+1,w
+   215  0174  0490               	iorwf	16,f	;volatile
+   216  0175                     l640:
+   217                           
+   218                           ;blink.c: 34:     ANSELA=0;
+   219  0175  0188               	clrf	8	;volatile
+   220  0176                     l642:
+   221                           
+   222                           ;blink.c: 35:     OPTION_REG&=~0xA6;
+   223  0176  3059               	movlw	89
+   224  0177  00FF               	movwf	btemp+1
+   225  0178  087F               	movf	btemp+1,w
+   226  0179  058E               	andwf	14,f	;volatile
+   227  017A                     l644:
+   228                           
+   229                           ;blink.c: 36:     TRISA&=~((1<<1)|(1<<2));
+   230  017A  30F9               	movlw	249
+   231  017B  00FF               	movwf	btemp+1
+   232  017C  087F               	movf	btemp+1,w
+   233  017D  0586               	andwf	6,f	;volatile
+   234  017E                     l646:
+   235                           
+   236                           ;blink.c: 37:     LATA&=~((1<<1)|(1<<2));
+   237  017E  30F9               	movlw	249
+   238  017F  00FF               	movwf	btemp+1
+   239  0180  087F               	movf	btemp+1,w
+   240  0181  0587               	andwf	7,f	;volatile
+   241  0182                     l648:
+   242                           
+   243                           ;blink.c: 38:     PORTA&=~((1<<2));
+   244  0182  30FB               	movlw	251
+   245  0183  00FF               	movwf	btemp+1
+   246  0184  087F               	movf	btemp+1,w
+   247  0185  0585               	andwf	5,f	;volatile
+   248  0186                     l650:
+   249                           
+   250                           ;blink.c: 39:     WPUA|=(1<<2);
+   251  0186  1509               	bsf	9,2	;volatile
+   252  0187                     l652:
+   253                           
+   254                           ;blink.c: 41:     PWM1CON=1;
+   255  0187  3001               	movlw	1
+   256  0188  0096               	movwf	22	;volatile
+   257  0189                     l654:
+   258                           
+   259                           ;blink.c: 42:     T2CON&=0xFC;
+   260  0189  30FC               	movlw	252
+   261  018A  00FF               	movwf	btemp+1
+   262  018B  087F               	movf	btemp+1,w
+   263  018C  0593               	andwf	19,f	;volatile
+   264  018D                     l656:
+   265                           
+   266                           ;blink.c: 43:     PR2=31;
+   267  018D  301F               	movlw	31
+   268  018E  0092               	movwf	18	;volatile
+   269  018F                     l658:
+   270                           
+   271                           ;blink.c: 44:     PWM1DCH=16;
+   272  018F  3010               	movlw	16
+   273  0190  0095               	movwf	21	;volatile
+   274  0191                     l660:
+   275                           
+   276                           ;blink.c: 45:     PWM1DCL=0;
+   277  0191  0194               	clrf	20	;volatile
+   278  0192                     l662:
+   279                           
+   280                           ;blink.c: 46:     T2CON|=(1<<2);
+   281  0192  1513               	bsf	19,2	;volatile
+   282                           
+   283                           ;blink.c: 48:     NCO1CLK=2;
+   284  0193  3002               	movlw	2
+   285  0194  00AE               	movwf	46	;volatile
+   286                           
+   287                           ;blink.c: 49:     NCO1CON=0x80;
+   288  0195  3080               	movlw	128
+   289  0196  00AD               	movwf	45	;volatile
+   290                           
+   291                           ;blink.c: 51:     CLC1GLS0=2;
+   292  0197  3002               	movlw	2
+   293  0198  00B5               	movwf	53	;volatile
+   294  0199                     l664:
+   295                           
+   296                           ;blink.c: 52:     CLC1GLS1=0;
+   297  0199  01B6               	clrf	54	;volatile
+   298  019A                     l666:
+   299                           
+   300                           ;blink.c: 53:     CLC1GLS2=0x20;
+   301  019A  3020               	movlw	32
+   302  019B  00B7               	movwf	55	;volatile
+   303                           
+   304                           ;blink.c: 54:     CLC1GLS3=0;
+   305  019C  01B8               	clrf	56	;volatile
+   306  019D                     l668:
+   307                           
+   308                           ;blink.c: 55:     CLC1SEL0=3;
+   309  019D  3003               	movlw	3
+   310  019E  00B2               	movwf	50	;volatile
+   311  019F                     l670:
+   312                           
+   313                           ;blink.c: 56:     CLC1SEL1=5;
+   314  019F  3005               	movlw	5
+   315  01A0  00B3               	movwf	51	;volatile
+   316                           
+   317                           ;blink.c: 57:     CLC1POL=0;
+   318  01A1  01B4               	clrf	52	;volatile
+   319  01A2                     l672:
+   320                           
+   321                           ;blink.c: 58:     CLC1CON=0xC1;
+   322  01A2  30C1               	movlw	193
+   323  01A3  00B1               	movwf	49	;volatile
+   324  01A4                     l674:
+   325                           
+   326                           ;blink.c: 60:         OPTION_REG|=(1<<3);
+   327  01A4  158E               	bsf	14,3	;volatile
+   328  01A5                     l676:
+   329                           
+   330                           ;blink.c: 61:         TMR0=0;
+   331  01A5  0181               	clrf	1	;volatile
+   332  01A6                     l678:
+   333                           
+   334                           ;blink.c: 62:         TRISA|=(1<<2);
+   335  01A6  1506               	bsf	6,2	;volatile
+   336  01A7                     l56:	
+   337                           ;blink.c: 63:         while (!(PORTA&(1<<2)));
+   338                           
+   339  01A7  1D05               	btfss	5,2	;volatile
+   340  01A8  29AA               	goto	u41
+   341  01A9  29AB               	goto	u40
+   342  01AA                     u41:
+   343  01AA  29A7               	goto	l56
+   344  01AB                     u40:
+   345  01AB                     l680:
+   346                           
+   347                           ;blink.c: 64:         TRISA&=~(1<<2);
+   348  01AB  30FB               	movlw	251
+   349  01AC  00FF               	movwf	btemp+1
+   350  01AD  087F               	movf	btemp+1,w
+   351  01AE  0586               	andwf	6,f	;volatile
+   352                           
+   353                           ;blink.c: 65:         LATA&=~(1<<2);
+   354  01AF  30FB               	movlw	251
+   355  01B0  00FF               	movwf	btemp+1
+   356  01B1  087F               	movf	btemp+1,w
+   357  01B2  0587               	andwf	7,f	;volatile
+   358  01B3                     l682:
+   359                           
+   360                           ;blink.c: 66:         if ((temp=TMR0)){
+   361  01B3  0801               	movf	1,w	;volatile
+   362  01B4  00C0               	movwf	??_main
+   363  01B5  01C1               	clrf	??_main+1
+   364  01B6  0840               	movf	??_main,w
+   365  01B7  00C3               	movwf	main@temp
+   366  01B8  0841               	movf	??_main+1,w
+   367  01B9  00C4               	movwf	main@temp+1
+   368  01BA  0843               	movf	main@temp,w
+   369  01BB  0444               	iorwf	main@temp+1,w
+   370  01BC  1903               	btfsc	3,2
+   371  01BD  29BF               	goto	u51
+   372  01BE  29C0               	goto	u50
+   373  01BF                     u51:
+   374  01BF  29E5               	goto	l690
+   375  01C0                     u50:
+   376  01C0                     l684:
+   377                           
+   378                           ;blink.c: 67:             temp=(temp<<4)+((16384)&0xff);
+   379  01C0  0844               	movf	main@temp+1,w
+   380  01C1  00C1               	movwf	??_main+1
+   381  01C2  0843               	movf	main@temp,w
+   382  01C3  00C0               	movwf	??_main
+   383  01C4  0EC0               	swapf	??_main,f
+   384  01C5  0EC1               	swapf	??_main+1,f
+   385  01C6  30F0               	movlw	240
+   386  01C7  05C1               	andwf	??_main+1,f
+   387  01C8  0840               	movf	??_main,w
+   388  01C9  390F               	andlw	15
+   389  01CA  04C1               	iorwf	??_main+1,f
+   390  01CB  30F0               	movlw	240
+   391  01CC  05C0               	andwf	??_main,f
+   392  01CD  0840               	movf	??_main,w
+   393  01CE  00C3               	movwf	main@temp
+   394  01CF  0841               	movf	??_main+1,w
+   395  01D0  00C4               	movwf	main@temp+1
+   396                           
+   397                           ;blink.c: 68:             NCO1INCL=temp&0xff;
+   398  01D1  0843               	movf	main@temp,w
+   399  01D2  00AA               	movwf	42	;volatile
+   400  01D3                     l686:
+   401                           
+   402                           ;blink.c: 69:             temp=(temp>>8)+((16384)>>8);
+   403  01D3  0844               	movf	main@temp+1,w
+   404  01D4  00C1               	movwf	??_main+1
+   405  01D5  0843               	movf	main@temp,w
+   406  01D6  00C0               	movwf	??_main
+   407  01D7  0841               	movf	??_main+1,w
+   408  01D8  00C0               	movwf	??_main
+   409  01D9  01C1               	clrf	??_main+1
+   410  01DA  0840               	movf	??_main,w
+   411  01DB  3E40               	addlw	64
+   412  01DC  00C3               	movwf	main@temp
+   413  01DD  0841               	movf	??_main+1,w
+   414  01DE  1803               	skipnc
+   415  01DF  3E01               	addlw	1
+   416  01E0  3E00               	addlw	0
+   417  01E1  00C4               	movwf	main@temp+1
+   418  01E2                     l688:
+   419                           
+   420                           ;blink.c: 70:             NCO1INCH=temp;
+   421  01E2  0843               	movf	main@temp,w
+   422  01E3  00AB               	movwf	43	;volatile
+   423                           
+   424                           ;blink.c: 71:         }else{
+   425  01E4  29E8               	goto	l694
+   426  01E5                     l690:
+   427                           
+   428                           ;blink.c: 72:             NCO1INCL=(unsigned char)((16384)&0x00ff);
+   429  01E5  01AA               	clrf	42	;volatile
+   430  01E6                     l692:
+   431                           
+   432                           ;blink.c: 73:             NCO1INCH=(unsigned char)((16384)>>8);
+   433  01E6  3040               	movlw	64
+   434  01E7  00AB               	movwf	43	;volatile
+   435  01E8                     l694:
+   436                           
+   437                           ;blink.c: 76:         OPTION_REG&=~(1<<3);
+   438  01E8  30F7               	movlw	247
+   439  01E9  00FF               	movwf	btemp+1
+   440  01EA  087F               	movf	btemp+1,w
+   441  01EB  058E               	andwf	14,f	;volatile
+   442  01EC                     l696:
+   443                           
+   444                           ;blink.c: 77:         ms_dly=78;
+   445  01EC  304E               	movlw	78
+   446  01ED  00FF               	movwf	btemp+1
+   447  01EE  087F               	movf	btemp+1,w
+   448  01EF  00C2               	movwf	main@ms_dly
+   449                           
+   450                           ;blink.c: 78:         while (ms_dly--){
+   451  01F0  29F5               	goto	l698
+   452  01F1                     l62:
+   453  01F1  0181               	clrf	1	;# 
+   454  01F2  110B               	bcf	11,2	;# 
+   455  01F3  1D0B               	btfss	11,2	;# 
+   456  01F4  2970               	goto	($+-1)	;# 
+   457  01F5                     l698:
+   458                           
+   459                           ;blink.c: 78:         while (ms_dly--){
+   460  01F5  3001               	movlw	1
+   461  01F6  02C2               	subwf	main@ms_dly,f
+   462  01F7  0A42               	incf	main@ms_dly,w
+   463  01F8  1D03               	btfss	3,2
+   464  01F9  29FB               	goto	u61
+   465  01FA  29FC               	goto	u60
+   466  01FB                     u61:
+   467  01FB  29F1               	goto	l62
+   468  01FC                     u60:
+   469  01FC  29A4               	goto	l674
+   470  01FD  2800               	ljmp	start
+   471  01FE                     __end_of_main:
+   472  007E                     btemp	set	126	;btemp
+   473  007E                     wtemp0	set	126
+   474                           
+   475                           	psect	config
+   476                           
+   477                           ;Config register CONFIG @ 0x2007
+   478                           ;	Oscillator Selection bits
+   479                           ;	FOSC = INTOSC, INTOSC oscillator: CLKIN function disabled
+   480                           ;	Brown-out Reset Enable
+   481                           ;	BOREN = OFF, Brown-out Reset disabled
+   482                           ;	Watchdog Timer Enable
+   483                           ;	WDTE = OFF, WDT disabled
+   484                           ;	Power-up Timer Enable bit
+   485                           ;	PWRTE = OFF, PWRT disabled
+   486                           ;	MCLR Pin Function Select bit
+   487                           ;	MCLRE = ON, MCLR pin function is MCLR
+   488                           ;	Code Protection bit
+   489                           ;	CP = OFF, Program memory code protection is disabled
+   490                           ;	Low-Voltage Programming Enable
+   491                           ;	LVP = OFF, High-voltage on MCLR/VPP must be used for programming
+   492                           ;	Brown-out Reset Selection bits
+   493                           ;	LPBOR = ON, BOR enabled
+   494                           ;	Brown-out Reset Voltage Selection
+   495                           ;	BORV = LO, Brown-out Reset Voltage (Vbor), low trip point selected.
+   496                           ;	Flash Memory Self-Write Protection
+   497                           ;	WRT = OFF, Write protection off
+   498  2007                     	org	8199
+   499  2007  3EE0               	dw	16096
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON            0      0       0
+    BANK0            62      5       5
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 5     5      0     114
+                                              0 BANK0      5     5      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 0
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            0      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+COMMON               0      0       0       1        0.0%
+STACK                0      0       0       2        0.0%
+BANK0               3E      5       5       3        8.1%
+ABS                  0      0       0       4        0.0%
+DATA                 0      0       0       5        0.0%
+BITBANK0            3E      0       0       6        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.20 build 20200408173844 
+Symbol Table                                                                                   Sun Oct 18 23:06:14 2020
+
+                     l62 01F1                       l56 01A7                       u40 01AB  
+                     u41 01AA                       u50 01C0                       u51 01BF  
+                     u60 01FC                       u61 01FB                      TMR0 0001  
+                    l640 0175                      l650 0186                      l642 0176  
+                    l660 0191                      l652 0187                      l644 017A  
+                    l670 019F                      l662 0192                      l654 0189  
+                    l646 017E                      l638 0171                      l680 01AB  
+                    l672 01A2                      l664 0199                      l656 018D  
+                    l648 0182                      l690 01E5                      l682 01B3  
+                    l674 01A4                      l666 019A                      l658 018F  
+                    l692 01E6                      l684 01C0                      l676 01A5  
+                    l668 019D                      l694 01E8                      l686 01D3  
+                    l678 01A6                      l696 01EC                      l688 01E2  
+                    l698 01F5                      _PR2 0012                     _LATA 0007  
+                   _TMR0 0001                     _WPUA 0009                     _main 0171  
+                   btemp 007E                     start 0000                    INTCON 000B  
+                  ?_main 0040                    _T2CON 0013                    _PORTA 0005  
+                  _TRISA 0006                    status 0003                    wtemp0 007E  
+        __initialization 01FE             __end_of_main 01FE                   ??_main 0040  
+                 _ANSELA 0008                   _OSCCON 0010  __end_of__initialization 01FE  
+             __pmaintext 0171                  _CLC1CON 0031                  _CLC1POL 0034  
+                _NCO1CLK 002E                  _NCO1CON 002D                  _PWM1DCH 0015  
+                _PWM1DCL 0014                  _PWM1CON 0016     end_of_initialization 01FE  
+             main@ms_dly 0042      start_initialization 01FE                ___latbits 0000  
+          __pcstackBANK0 0040                 _CLC1GLS0 0035                 _CLC1GLS1 0036  
+               _CLC1GLS2 0037                 _CLC1GLS3 0038                 _CLC1SEL0 0032  
+               _CLC1SEL1 0033                 _NCO1INCH 002B                 _NCO1INCL 002A  
+          __size_of_main 008D                 main@temp 0043               _OPTION_REG 000E  
