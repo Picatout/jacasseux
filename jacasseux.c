@@ -26,10 +26,8 @@
 
 
 unsigned char ms_dly;
-unsigned int temp;
 
 void main(void) {
-    
     OSCCON|=(7<<4);
     ANSELA=0;
     OPTION_REG=1;
@@ -39,11 +37,10 @@ void main(void) {
     WPUA|=CAP_P;
     // initialisation PWM CH1
     PWM1CON=(1<<7); 
-    T2CON&=0xFC;
     PR2=31;
     PWM1DCH=16;
     PWM1DCL=0;
-    T2CON|=(1<<2);
+    T2CON=(1<<2);
     // initialisation NCO
     NCO1CLK=2;
     NCO1CON=0x80;
@@ -61,16 +58,9 @@ void main(void) {
         TRISA|=CAP_P;
         asm("btfss PORTA,2");
         asm("goto $-1");
+        NCO1INC=TMR0+NCO_CAL;
         TRISA&=~CAP_P;
         LATA&=~CAP_P;
-        if ((temp=TMR0<<2)){
-            temp+=NCO_CAL;
-            NCO1INC=temp;
-        }else{
-            asm("clrf NCO1INCL");
-            asm("movlw 0x40");
-            asm("movwf NCO1INCH");
-        }
         // délais
         asm("movlw 100");
         asm("movwf _ms_dly");

@@ -24,9 +24,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "840
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 840: extern volatile unsigned char PWM1CON __attribute__((address(0x016)));
 [v _PWM1CON `Vuc ~T0 @X0 0 e@22 ]
-"663
-[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 663: extern volatile unsigned char T2CON __attribute__((address(0x013)));
-[v _T2CON `Vuc ~T0 @X0 0 e@19 ]
 "656
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 656: extern volatile unsigned char PR2 __attribute__((address(0x012)));
 [v _PR2 `Vuc ~T0 @X0 0 e@18 ]
@@ -36,6 +33,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "734
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 734: extern volatile unsigned char PWM1DCL __attribute__((address(0x014)));
 [v _PWM1DCL `Vuc ~T0 @X0 0 e@20 ]
+"663
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 663: extern volatile unsigned char T2CON __attribute__((address(0x013)));
+[v _T2CON `Vuc ~T0 @X0 0 e@19 ]
 "1902
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 1902: extern volatile unsigned char NCO1CLK __attribute__((address(0x02E)));
 [v _NCO1CLK `Vuc ~T0 @X0 0 e@46 ]
@@ -302,173 +302,141 @@ Version 4.0 HI-TECH Software Intermediate Code
 "28 jacasseux.c
 [; ;jacasseux.c: 28: unsigned char ms_dly;
 [v _ms_dly `uc ~T0 @X0 1 e ]
-"29
-[; ;jacasseux.c: 29: unsigned int temp;
-[v _temp `ui ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"31
-[; ;jacasseux.c: 31: void main(void) {
+"30
+[; ;jacasseux.c: 30: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"33
-[; ;jacasseux.c: 33:     OSCCON|=(7<<4);
+"31
+[; ;jacasseux.c: 31:     OSCCON|=(7<<4);
 [e =| _OSCCON -> << -> 7 `i -> 4 `i `Vuc ]
-"34
-[; ;jacasseux.c: 34:     ANSELA=0;
+"32
+[; ;jacasseux.c: 32:     ANSELA=0;
 [e = _ANSELA -> -> 0 `i `uc ]
-"35
-[; ;jacasseux.c: 35:     OPTION_REG=1;
+"33
+[; ;jacasseux.c: 33:     OPTION_REG=1;
 [e = _OPTION_REG -> -> 1 `i `uc ]
-"36
-[; ;jacasseux.c: 36:     TRISA&=~((1<<1)|(1<<2));
+"34
+[; ;jacasseux.c: 34:     TRISA&=~((1<<1)|(1<<2));
 [e =& _TRISA -> ~ | << -> 1 `i -> 1 `i << -> 1 `i -> 2 `i `Vuc ]
-"37
-[; ;jacasseux.c: 37:     LATA&=~((1<<1)|(1<<2));
+"35
+[; ;jacasseux.c: 35:     LATA&=~((1<<1)|(1<<2));
 [e =& _LATA -> ~ | << -> 1 `i -> 1 `i << -> 1 `i -> 2 `i `Vuc ]
-"38
-[; ;jacasseux.c: 38:     PORTA&=~((1<<2));
+"36
+[; ;jacasseux.c: 36:     PORTA&=~((1<<2));
 [e =& _PORTA -> ~ << -> 1 `i -> 2 `i `Vuc ]
-"39
-[; ;jacasseux.c: 39:     WPUA|=(1<<2);
+"37
+[; ;jacasseux.c: 37:     WPUA|=(1<<2);
 [e =| _WPUA -> << -> 1 `i -> 2 `i `Vuc ]
-"41
-[; ;jacasseux.c: 41:     PWM1CON=(1<<7);
+"39
+[; ;jacasseux.c: 39:     PWM1CON=(1<<7);
 [e = _PWM1CON -> << -> 1 `i -> 7 `i `uc ]
-"42
-[; ;jacasseux.c: 42:     T2CON&=0xFC;
-[e =& _T2CON -> -> 252 `i `Vuc ]
-"43
-[; ;jacasseux.c: 43:     PR2=31;
+"40
+[; ;jacasseux.c: 40:     PR2=31;
 [e = _PR2 -> -> 31 `i `uc ]
-"44
-[; ;jacasseux.c: 44:     PWM1DCH=16;
+"41
+[; ;jacasseux.c: 41:     PWM1DCH=16;
 [e = _PWM1DCH -> -> 16 `i `uc ]
-"45
-[; ;jacasseux.c: 45:     PWM1DCL=0;
+"42
+[; ;jacasseux.c: 42:     PWM1DCL=0;
 [e = _PWM1DCL -> -> 0 `i `uc ]
-"46
-[; ;jacasseux.c: 46:     T2CON|=(1<<2);
-[e =| _T2CON -> << -> 1 `i -> 2 `i `Vuc ]
-"48
-[; ;jacasseux.c: 48:     NCO1CLK=2;
+"43
+[; ;jacasseux.c: 43:     T2CON=(1<<2);
+[e = _T2CON -> << -> 1 `i -> 2 `i `uc ]
+"45
+[; ;jacasseux.c: 45:     NCO1CLK=2;
 [e = _NCO1CLK -> -> 2 `i `uc ]
-"49
-[; ;jacasseux.c: 49:     NCO1CON=0x80;
+"46
+[; ;jacasseux.c: 46:     NCO1CON=0x80;
 [e = _NCO1CON -> -> 128 `i `uc ]
-"51
-[; ;jacasseux.c: 51:     CLC1GLS0=2;
+"48
+[; ;jacasseux.c: 48:     CLC1GLS0=2;
 [e = _CLC1GLS0 -> -> 2 `i `uc ]
-"52
-[; ;jacasseux.c: 52:     CLC1GLS1=0;
+"49
+[; ;jacasseux.c: 49:     CLC1GLS1=0;
 [e = _CLC1GLS1 -> -> 0 `i `uc ]
-"53
-[; ;jacasseux.c: 53:     CLC1GLS2=0x20;
+"50
+[; ;jacasseux.c: 50:     CLC1GLS2=0x20;
 [e = _CLC1GLS2 -> -> 32 `i `uc ]
-"54
-[; ;jacasseux.c: 54:     CLC1GLS3=0;
+"51
+[; ;jacasseux.c: 51:     CLC1GLS3=0;
 [e = _CLC1GLS3 -> -> 0 `i `uc ]
-"55
-[; ;jacasseux.c: 55:     CLC1SEL0=3;
+"52
+[; ;jacasseux.c: 52:     CLC1SEL0=3;
 [e = _CLC1SEL0 -> -> 3 `i `uc ]
-"56
-[; ;jacasseux.c: 56:     CLC1SEL1=5;
+"53
+[; ;jacasseux.c: 53:     CLC1SEL1=5;
 [e = _CLC1SEL1 -> -> 5 `i `uc ]
-"57
-[; ;jacasseux.c: 57:     CLC1POL=0;
+"54
+[; ;jacasseux.c: 54:     CLC1POL=0;
 [e = _CLC1POL -> -> 0 `i `uc ]
-"58
-[; ;jacasseux.c: 58:     CLC1CON=0xC1;
+"55
+[; ;jacasseux.c: 55:     CLC1CON=0xC1;
 [e = _CLC1CON -> -> 193 `i `uc ]
-"59
-[; ;jacasseux.c: 59:     while (1){
+"56
+[; ;jacasseux.c: 56:     while (1){
 [e :U 145 ]
 {
-"60
-[; ;jacasseux.c: 60:         TMR0=0;
+"57
+[; ;jacasseux.c: 57:         TMR0=0;
 [e = _TMR0 -> -> 0 `i `uc ]
-"61
-[; ;jacasseux.c: 61:         TRISA|=(1<<2);
+"58
+[; ;jacasseux.c: 58:         TRISA|=(1<<2);
 [e =| _TRISA -> << -> 1 `i -> 2 `i `Vuc ]
-"62
-[; ;jacasseux.c: 62:         __asm("btfss PORTA,2");
+"59
+[; ;jacasseux.c: 59:         __asm("btfss PORTA,2");
 [; <" btfss PORTA,2 ;# ">
-"63
-[; ;jacasseux.c: 63:         __asm("goto $-1");
+"60
+[; ;jacasseux.c: 60:         __asm("goto $-1");
 [; <" goto $-1 ;# ">
-"64
-[; ;jacasseux.c: 64:         TRISA&=~(1<<2);
+"61
+[; ;jacasseux.c: 61:         NCO1INC=TMR0+(16384);
+[e = _NCO1INC -> -> + -> _TMR0 `i -> 16384 `i `m `um ]
+"62
+[; ;jacasseux.c: 62:         TRISA&=~(1<<2);
 [e =& _TRISA -> ~ << -> 1 `i -> 2 `i `Vuc ]
-"65
-[; ;jacasseux.c: 65:         LATA&=~(1<<2);
+"63
+[; ;jacasseux.c: 63:         LATA&=~(1<<2);
 [e =& _LATA -> ~ << -> 1 `i -> 2 `i `Vuc ]
-"66
-[; ;jacasseux.c: 66:         if ((temp=TMR0<<2)){
-[e $ ! != = _temp -> << -> _TMR0 `i -> 2 `i `ui -> -> 0 `i `ui 147  ]
-{
-"67
-[; ;jacasseux.c: 67:             temp+=(16384);
-[e =+ _temp -> -> 16384 `i `ui ]
-"68
-[; ;jacasseux.c: 68:             NCO1INC=temp;
-[e = _NCO1INC -> _temp `um ]
-"69
-[; ;jacasseux.c: 69:         }else{
-}
-[e $U 148  ]
-[e :U 147 ]
-{
-"70
-[; ;jacasseux.c: 70:             __asm("clrf NCO1INCL");
-[; <" clrf NCO1INCL ;# ">
-"71
-[; ;jacasseux.c: 71:             __asm("movlw 0x40");
-[; <" movlw 0x40 ;# ">
-"72
-[; ;jacasseux.c: 72:             __asm("movwf NCO1INCH");
-[; <" movwf NCO1INCH ;# ">
-"73
-[; ;jacasseux.c: 73:         }
-}
-[e :U 148 ]
-"75
-[; ;jacasseux.c: 75:         __asm("movlw 100");
+"65
+[; ;jacasseux.c: 65:         __asm("movlw 100");
 [; <" movlw 100 ;# ">
-"76
-[; ;jacasseux.c: 76:         __asm("movwf _ms_dly");
+"66
+[; ;jacasseux.c: 66:         __asm("movwf _ms_dly");
 [; <" movwf _ms_dly ;# ">
-"77
-[; ;jacasseux.c: 77:         __asm("delay:");
+"67
+[; ;jacasseux.c: 67:         __asm("delay:");
 [; <" delay: ;# ">
-"78
-[; ;jacasseux.c: 78:         __asm("CLRF TMR0");
+"68
+[; ;jacasseux.c: 68:         __asm("CLRF TMR0");
 [; <" CLRF TMR0 ;# ">
-"79
-[; ;jacasseux.c: 79:         __asm("BCF INTCON,2");
+"69
+[; ;jacasseux.c: 69:         __asm("BCF INTCON,2");
 [; <" BCF INTCON,2 ;# ">
-"80
-[; ;jacasseux.c: 80:         __asm("BTFSS INTCON,2");
+"70
+[; ;jacasseux.c: 70:         __asm("BTFSS INTCON,2");
 [; <" BTFSS INTCON,2 ;# ">
-"81
-[; ;jacasseux.c: 81:         __asm("GOTO $-1");
+"71
+[; ;jacasseux.c: 71:         __asm("GOTO $-1");
 [; <" GOTO $-1 ;# ">
-"82
-[; ;jacasseux.c: 82:         __asm("decfsz _ms_dly");
+"72
+[; ;jacasseux.c: 72:         __asm("decfsz _ms_dly");
 [; <" decfsz _ms_dly ;# ">
-"83
-[; ;jacasseux.c: 83:         __asm("goto delay");
+"73
+[; ;jacasseux.c: 73:         __asm("goto delay");
 [; <" goto delay ;# ">
-"84
-[; ;jacasseux.c: 84:     }
+"74
+[; ;jacasseux.c: 74:     }
 }
 [e :U 144 ]
 [e $U 145  ]
 [e :U 146 ]
-"85
-[; ;jacasseux.c: 85:     return;
+"75
+[; ;jacasseux.c: 75:     return;
 [e $UE 143  ]
-"86
-[; ;jacasseux.c: 86: }
+"76
+[; ;jacasseux.c: 76: }
 [e :UE 143 ]
 }

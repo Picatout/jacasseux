@@ -2194,10 +2194,8 @@ extern __bank0 __bit __timeout;
 
 
 unsigned char ms_dly;
-unsigned int temp;
 
 void main(void) {
-
     OSCCON|=(7<<4);
     ANSELA=0;
     OPTION_REG=1;
@@ -2207,11 +2205,10 @@ void main(void) {
     WPUA|=(1<<2);
 
     PWM1CON=(1<<7);
-    T2CON&=0xFC;
     PR2=31;
     PWM1DCH=16;
     PWM1DCL=0;
-    T2CON|=(1<<2);
+    T2CON=(1<<2);
 
     NCO1CLK=2;
     NCO1CON=0x80;
@@ -2229,16 +2226,9 @@ void main(void) {
         TRISA|=(1<<2);
         __asm("btfss PORTA,2");
         __asm("goto $-1");
+        NCO1INC=TMR0+(16384);
         TRISA&=~(1<<2);
         LATA&=~(1<<2);
-        if ((temp=TMR0<<2)){
-            temp+=(16384);
-            NCO1INC=temp;
-        }else{
-            __asm("clrf NCO1INCL");
-            __asm("movlw 0x40");
-            __asm("movwf NCO1INCH");
-        }
 
         __asm("movlw 100");
         __asm("movwf _ms_dly");
