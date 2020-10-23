@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production/jacasseux.X.production.hex">
+  <executable name="dist/default/production/babble.X.production.hex">
     <memory name="program">
       <units>words</units>
       <length>512</length>
-      <used>87</used>
-      <free>425</free>
+      <used>147</used>
+      <free>365</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>64</length>
-      <used>5</used>
-      <free>59</free>
+      <used>12</used>
+      <free>52</free>
     </memory>
   </executable>
 </project>

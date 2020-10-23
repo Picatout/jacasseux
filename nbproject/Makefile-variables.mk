@@ -6,8 +6,8 @@
 CND_BASEDIR=`pwd`
 # default configuration
 CND_ARTIFACT_DIR_default=dist/default/production
-CND_ARTIFACT_NAME_default=jacasseux.X.production.hex
-CND_ARTIFACT_PATH_default=dist/default/production/jacasseux.X.production.hex
+CND_ARTIFACT_NAME_default=babble.X.production.hex
+CND_ARTIFACT_PATH_default=dist/default/production/babble.X.production.hex
 CND_PACKAGE_DIR_default=${CND_DISTDIR}/default/package
-CND_PACKAGE_NAME_default=jacasseux.x.tar
-CND_PACKAGE_PATH_default=${CND_DISTDIR}/default/package/jacasseux.x.tar
+CND_PACKAGE_NAME_default=babble.x.tar
+CND_PACKAGE_PATH_default=${CND_DISTDIR}/default/package/babble.x.tar

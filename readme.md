@@ -1,12 +1,14 @@
-# Jacasseux
+# babble
 
- Production de fréquences aléatoires dans la bande audio-fréquences par utilisation d'un OU EXCUSIF entre 2 radio-fréquences. Cette idée est inspirée du [thérémine](https://fr.wikipedia.org/wiki/Th%C3%A9r%C3%A9mine). 
- 
+ Projet de sculpture électronique. Production de fréquences aléatoires dans la bande audio-fréquences par utilisation d'un OU EXCUSIF entre 2 radio-fréquences. Cette idée est inspirée du [thérémine](https://fr.wikipedia.org/wiki/Th%C3%A9r%C3%A9mine). 
+La *tour de babble* est sensible au interférences électromagnétique. Lorsqu'une électromagnétique suffisamment puissante pour charger **C6** à niveau suffisant pour être détecté par **RA0** comme un changmenent de niveau babble se met à babiller pendant
+environ 30 secondes.   
+
 Ce petit circuit illustre une utilisation du périphique CLC du PIC10F322.
 
 ## schématique
 
-![jacasseux](jacasseux.png)
+![babble](babble.png)
 
 Le circuit peut-être alimenté avec un voltage entre 3 et 5 volts.
 
@@ -23,3 +25,6 @@ La fréquence du **NCO** est modifiée de manière aléatoire pour produire une 
 Comme générateur aléatoire, le circuit utilise la mesure du temps de charge du condensateur **C2** à travers la résistance *pullup* de l'entrée **RA2**. Le cycle est le suivant. **RA2** en configurée en entrée avec pullup ce qui permet de charger **C2** vers Vdd. Le **TIMER0** est initialisée au début du cycle. Une lecture répéritive de l'entrée **PORTA:2** est effectuée jusqu'à ce que la lecture arrive à **1**. À ce moment ont configure **RA2** en mode sortie à 0 volt pour décharger **C2** afin qu'il soit prèt pour le prochain cycle. Pendant la charge de **C2** vers **Vdd** le **TIMER0** incrémente. À la fin du cycle de charge la lecture du registre **TMR0** est utilisée pour modifier la valeur de l'incrément du **NCO**. Les paramètres sont choisient pour que la différence de fréquence entre les générateurs **PWM1_CH1** et **NCO** demeure dans l'intervalle des fréquences audibles.
 
 Avec un condensateur de **100nF** pour **C2** il y a suffisamment de variabilitée entre les lectures pour produire l'effet aléatoire désiré.
+
+# Babble
+

@@ -25,9 +25,38 @@
 #define CAP_P (1<<2)    // RA2
 
 
-unsigned char ms_dly;
+void msec_delay(unsigned int msec){
+    while(msec--){
+        // délais
+        asm("CLRF TMR0");
+        asm("BCF INTCON,2");
+        asm("BTFSS INTCON,2");
+        asm("GOTO $-1");
+   }
+}
+
+unsigned int read_cap(){
+    unsigned int cap_val;
+        TMR0=0;
+        TRISA|=CAP_P;
+        asm("btfss PORTA,2");
+        asm("goto $-1");
+        cap_val=TMR0;
+        TRISA&=~CAP_P;
+        LATA&=~CAP_P;
+        return cap_val;
+}
+
+void wait_trigger(){
+    asm(
+    "clrf IOCAF\n"
+    "btfss IOCAF,0\n"
+    "goto $-1\n"
+    );
+}
 
 void main(void) {
+    unsigned int babble_time;
     OSCCON|=(7<<4);
     ANSELA=0;
     OPTION_REG=1;
@@ -35,6 +64,8 @@ void main(void) {
     LATA&=~(AUDIO_P|CAP_P);
     PORTA&=~(CAP_P);
     WPUA|=CAP_P;
+    IOCAP=1;
+    IOCAN=0;
     // initialisation PWM CH1
     PWM1CON=(1<<7); 
     PR2=31;
@@ -54,23 +85,13 @@ void main(void) {
     CLC1POL=0;
     CLC1CON=0xC1;
     while (1){
-        TMR0=0;
-        TRISA|=CAP_P;
-        asm("btfss PORTA,2");
-        asm("goto $-1");
-        NCO1INC=TMR0+NCO_CAL;
-        TRISA&=~CAP_P;
-        LATA&=~CAP_P;
-        // délais
-        asm("movlw 100");
-        asm("movwf _ms_dly");
-        asm("delay:");
-        asm("CLRF TMR0");
-        asm("BCF INTCON,2");
-        asm("BTFSS INTCON,2");
-        asm("GOTO $-1");
-        asm("decfsz _ms_dly");
-        asm("goto delay");
+        NCO1INC=NCO_CAL;
+        wait_trigger();
+        babble_time=1000;
+        while (babble_time--){
+            NCO1INC=read_cap()+NCO_CAL;
+            msec_delay(100);
+        }
     }
     return;
 }

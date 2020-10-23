@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=jacasseux.X
+PROJECTNAME=babble.X
 
 # Active Configuration
 DEFAULTCONF=default
