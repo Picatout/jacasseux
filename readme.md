@@ -52,4 +52,7 @@ Voici des photos de la sculpture complétée.
 ![arrière](arrière.jpg)
 
 
+## vidéo sur youtube
+
+[vidéo](https://www.youtube.com/watch?v=wxc7ERc2EIc)
 
