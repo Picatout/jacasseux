@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=/opt/microchip/xc8/v2.20/pic/dat/en_msgs.txt -cn \
   -h+dist/default/production/babble.X.production.sym \
   --cmf=dist/default/production/babble.X.production.cmf -z -Q10F322 \
-  -o/tmp/xcXMGHaah --defsym=__MPLAB_BUILD=1 \
+  -o/tmp/xcXGdHfJG --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/babble.X.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=04Ah-07Dh -pstack=STACK -ACODE=00h-01FFh \
   -ASTRCODE=00h-01FFh -ASTRING=00h-0FFhx2 -ACONST=00h-0FFhx2 \
@@ -13,7 +13,7 @@ Linker command line:
   -ACOMMON=07Eh-07Fh -ASFR0=00h-03Fh -ACONFIG=02007h-02007h -DCONFIG=2 \
   -AIDLOC=02000h-02003h -DIDLOC=2 -preset_vec=00h,intentry,init,end_init \
   -ppowerup=CODE -pcinit=CODE -pfunctab=ENTRY -DCODE=2 -DSTRCODE=2 \
-  -DSTRING=2 -DCONST=2 -DENTRY=2 -k /tmp/xcXMkOfHK.o \
+  -DSTRING=2 -DCONST=2 -DENTRY=2 -k /tmp/xcXaOFjAD.o \
   dist/default/production/babble.X.production.o 
 
 Object code version is 3.11
@@ -23,16 +23,16 @@ Machine type is 10F322
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcXMkOfHK.o
+/tmp/xcXaOFjAD.o
                 end_init                              0        0        1        0       0
                 config                             2007     2007        1        0       4
 dist/default/production/babble.X.production.o
                 cinit                               1FE      1FE        2      3FC       0
                 config                             2007     2007        1        0       4
-                text3                               172      172       14      2E4       0
-                text2                               186      186       18      30C       0
-                text1                               16E      16E        4      2DC       0
-                maintext                            19E      19E       60      33C       0
+                text3                               176      176       13      2EC       0
+                text2                               189      189       1A      312       0
+                text1                               172      172        4      2E4       0
+                maintext                            1A3      1A3       5B      346       0
                 cstackBANK0                          40       40        A       40       1
 
 TOTAL           Name                               Link     Load   Length     Space
@@ -41,10 +41,10 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   CODE           
                 end_init                              0        0        1         0
                 cinit                               1FE      1FE        2         0
-                text3                               172      172       14         0
-                text2                               186      186       18         0
-                text1                               16E      16E        4         0
-                maintext                            19E      19E       60         0
+                text3                               176      176       13         0
+                text2                               189      189       1A         0
+                text1                               172      172        4         0
+                maintext                            1A3      1A3       5B         0
 
         CLASS   STRCODE        
 
@@ -77,11 +77,11 @@ TOTAL           Name                               Link     Load   Length     Sp
 
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
-                text2                          000186  000018  00019E       30C       0  CODE        2
-                text3                          000172  000014  000186       2E4       0  CODE        2
+                text2                          000189  00001A  0001A3       312       0  CODE        2
+                text3                          000176  000013  000189       2EC       0  CODE        2
                 reset_vec                      000000  000001  000001         0       0  CODE        2
-                maintext                       00019E  000060  0001FE       33C       0  CODE        2
-                text1                          00016E  000004  000172       2DC       0  CODE        2
+                maintext                       0001A3  00005B  0001FE       346       0  CODE        2
+                text1                          000172  000004  000176       2E4       0  CODE        2
                 cstackBANK0                    000040  00000A  00004A        40       1  BANK0       1
                 cinit                          0001FE  000002  000200       3FC       0  CODE        2
 
@@ -90,15 +90,15 @@ UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
         BANK0            004A-007D             34           1
-        CODE             0001-016D            16D           2
-        CONST            0001-016D             FF           2
-        ENTRY            0001-016D             FF           2
+        CODE             0001-0171            171           2
+        CONST            0001-0171             FF           2
+        ENTRY            0001-0171             FF           2
         IDLOC            2000-2003              4           2
         RAM              004A-007D             34           1
         SFR0             0000-003F             40           1
         STACK            004A-007D             34           1
-        STRCODE          0001-016D            16D           2
-        STRING           0001-016D             FF           2
+        STRCODE          0001-0171            171           2
+        STRING           0001-0171             FF           2
 
                                   Symbol Table
 
@@ -193,24 +193,24 @@ ___stackhi               (abs)        0000
 ___stacklo               (abs)        0000
 __end_of__initialization cinit        01FE
 __end_of_main            maintext     01FE
-__end_of_msec_delay      text3        0186
-__end_of_read_cap        text2        019E
-__end_of_wait_trigger    text1        0172
+__end_of_msec_delay      text3        0189
+__end_of_read_cap        text2        01A3
+__end_of_wait_trigger    text1        0176
 __initialization         cinit        01FE
 __pcstackBANK0           cstackBANK0  0040
 __pcstackCOMMON          cstackCOMMON 0000
-__pmaintext              maintext     019E
-__ptext1                 text1        016E
-__ptext2                 text2        0186
-__ptext3                 text3        0172
+__pmaintext              maintext     01A3
+__ptext1                 text1        0172
+__ptext2                 text2        0189
+__ptext3                 text3        0176
 __size_of_main           (abs)        0000
 __size_of_msec_delay     (abs)        0000
 __size_of_read_cap       (abs)        0000
 __size_of_wait_trigger   (abs)        0000
-_main                    maintext     019E
-_msec_delay              text3        0172
-_read_cap                text2        0186
-_wait_trigger            text1        016E
+_main                    maintext     01A3
+_msec_delay              text3        0176
+_read_cap                text2        0189
+_wait_trigger            text1        0172
 btemp                    (abs)        007E
 end_of_initialization    cinit        01FE
 intlevel0                functab      0000
@@ -232,7 +232,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 58 in file "babble.c"
+		line 61 in file "babble.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -263,7 +263,7 @@ Total ram usage:        4 bytes
 
  *************** function _wait_trigger *****************
  Defined at:
-		line 50 in file "babble.c"
+		line 53 in file "babble.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -292,7 +292,7 @@ Total ram usage:        0 bytes
 
  *************** function _read_cap *****************
  Defined at:
-		line 38 in file "babble.c"
+		line 40 in file "babble.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -358,10 +358,10 @@ shared
 shared estimated size: 1
 
 babble.c
-		_main          		CODE           	019E	0000	97
-		_read_cap      		CODE           	0186	0000	25
-		_wait_trigger  		CODE           	016E	0000	5
-		_msec_delay    		CODE           	0172	0000	21
+		_main          		CODE           	01A3	0000	92
+		_read_cap      		CODE           	0189	0000	27
+		_wait_trigger  		CODE           	0172	0000	5
+		_msec_delay    		CODE           	0176	0000	20
 
-babble.c estimated size: 148
+babble.c estimated size: 144
 

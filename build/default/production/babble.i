@@ -2194,9 +2194,11 @@ extern __bank0 __bit __timeout;
 
 
 void msec_delay(unsigned int msec){
+    OPTION_REG=3;
     while(msec--){
 
-        __asm("CLRF TMR0");
+        __asm("MOVLW 5\n");
+        __asm("MOVWF TMR0\n");
         __asm("BCF INTCON,2");
         __asm("BTFSS INTCON,2");
         __asm("GOTO $-1");
@@ -2205,14 +2207,15 @@ void msec_delay(unsigned int msec){
 
 unsigned int read_cap(){
     unsigned int cap_val;
-        TMR0=0;
-        TRISA|=(1<<2);
-        __asm("btfss PORTA,2");
-        __asm("goto $-1");
-        cap_val=TMR0;
-        TRISA&=~(1<<2);
-        LATA&=~(1<<2);
-        return cap_val;
+    OPTION_REG=1;
+    TMR0=0;
+    TRISA|=(1<<2);
+    __asm("btfss PORTA,2");
+    __asm("goto $-1");
+    cap_val=TMR0;
+    TRISA&=~(1<<2);
+    LATA&=~(1<<2);
+    return cap_val;
 }
 
 void wait_trigger(){
@@ -2255,10 +2258,10 @@ void main(void) {
     while (1){
         NCO1INC=(16384);
         wait_trigger();
-        babble_time=1000;
+        babble_time=90;
         while (babble_time--){
             NCO1INC=read_cap()+(16384);
-            msec_delay(100);
+            msec_delay(32);
         }
     }
     return;

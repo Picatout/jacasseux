@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.20 build 20200408173844 
-                                                                                               Thu Oct 22 22:41:22 2020
+                                                                                               Fri Oct 23 16:57:50 2020
 
 Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1 
      1                           	processor	10F322
@@ -148,12 +148,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    134  001A                     _IOCAP	set	26
    135  0009                     _WPUA	set	9
    136  0005                     _PORTA	set	5
-   137  000E                     _OPTION_REG	set	14
-   138  0008                     _ANSELA	set	8
-   139  0010                     _OSCCON	set	16
-   140  0007                     _LATA	set	7
-   141  0006                     _TRISA	set	6
-   142  0001                     _TMR0	set	1
+   137  0008                     _ANSELA	set	8
+   138  0010                     _OSCCON	set	16
+   139  0007                     _LATA	set	7
+   140  0006                     _TRISA	set	6
+   141  0001                     _TMR0	set	1
+   142  000E                     _OPTION_REG	set	14
    143                           
    144                           	psect	cinit
    145  01FE                     start_initialization:	
@@ -165,7 +165,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    151                           
    152  01FE                     __end_of__initialization:
    153  01FE  0183               	clrf	3
-   154  01FF  299E               	ljmp	_main	;jump to C main() function
+   154  01FF  29A3               	ljmp	_main	;jump to C main() function
    155                           
    156                           	psect	cstackCOMMON
    157  0000                     __pcstackCOMMON:
@@ -212,13 +212,13 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    198  0048                     	ds	2
    199                           
    200                           	psect	maintext
-   201  019E                     __pmaintext:	
+   201  01A3                     __pmaintext:	
    202 ;;
    203 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
    204 ;;
    205 ;; *************** function _main *****************
    206 ;; Defined at:
-   207 ;;		line 58 in file "babble.c"
+   207 ;;		line 61 in file "babble.c"
    208 ;; Parameters:    Size  Location     Type
    209 ;;		None
    210 ;; Auto vars:     Size  Location     Type
@@ -249,418 +249,381 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    235                           
    236                           
    237                           ;psect for function _main
-   238  019E                     _main:
-   239  019E                     l671:	
-   240                           ;incstack = 0
-   241                           ; Regs used in _main: [wreg+status,2+status,0+btemp+1+pclath+cstack]
-   242                           
-   243                           
-   244                           ;babble.c: 59:     unsigned int babble_time;;babble.c: 60:     OSCCON|=(7<<4);
-   245  019E  3070               	movlw	112
-   246  019F  00FF               	movwf	btemp+1
-   247  01A0  087F               	movf	btemp+1,w
-   248  01A1  0490               	iorwf	16,f	;volatile
-   249  01A2                     l673:
-   250                           
-   251                           ;babble.c: 61:     ANSELA=0;
-   252  01A2  0188               	clrf	8	;volatile
-   253  01A3                     l675:
-   254                           
-   255                           ;babble.c: 62:     OPTION_REG=1;
-   256  01A3  3001               	movlw	1
-   257  01A4  008E               	movwf	14	;volatile
-   258  01A5                     l677:
-   259                           
-   260                           ;babble.c: 63:     TRISA&=~((1<<1)|(1<<2));
-   261  01A5  30F9               	movlw	249
-   262  01A6  00FF               	movwf	btemp+1
-   263  01A7  087F               	movf	btemp+1,w
-   264  01A8  0586               	andwf	6,f	;volatile
-   265  01A9                     l679:
-   266                           
-   267                           ;babble.c: 64:     LATA&=~((1<<1)|(1<<2));
-   268  01A9  30F9               	movlw	249
-   269  01AA  00FF               	movwf	btemp+1
-   270  01AB  087F               	movf	btemp+1,w
-   271  01AC  0587               	andwf	7,f	;volatile
-   272  01AD                     l681:
+   238  01A3                     _main:
+   239                           
+   240                           ;babble.c: 62:     unsigned int babble_time;;babble.c: 63:     OSCCON|=(7<<4);
+   241                           
+   242                           ;incstack = 0
+   243                           ; Regs used in _main: [wreg+status,2+status,0+btemp+1+pclath+cstack]
+   244  01A3  3070               	movlw	112
+   245  01A4  00FF               	movwf	127
+   246  01A5  087F               	movf	127,w
+   247  01A6  0490               	iorwf	16,f	;volatile
+   248                           
+   249                           ;babble.c: 64:     ANSELA=0;
+   250  01A7  0188               	clrf	8	;volatile
+   251                           
+   252                           ;babble.c: 65:     OPTION_REG=1;
+   253  01A8  3001               	movlw	1
+   254  01A9  008E               	movwf	14	;volatile
+   255                           
+   256                           ;babble.c: 66:     TRISA&=~((1<<1)|(1<<2));
+   257  01AA  30F9               	movlw	249
+   258  01AB  00FF               	movwf	127
+   259  01AC  087F               	movf	127,w
+   260  01AD  0586               	andwf	6,f	;volatile
+   261                           
+   262                           ;babble.c: 67:     LATA&=~((1<<1)|(1<<2));
+   263  01AE  30F9               	movlw	249
+   264  01AF  00FF               	movwf	127
+   265  01B0  087F               	movf	127,w
+   266  01B1  0587               	andwf	7,f	;volatile
+   267                           
+   268                           ;babble.c: 68:     PORTA&=~((1<<2));
+   269  01B2  30FB               	movlw	251
+   270  01B3  00FF               	movwf	127
+   271  01B4  087F               	movf	127,w
+   272  01B5  0585               	andwf	5,f	;volatile
    273                           
-   274                           ;babble.c: 65:     PORTA&=~((1<<2));
-   275  01AD  30FB               	movlw	251
-   276  01AE  00FF               	movwf	btemp+1
-   277  01AF  087F               	movf	btemp+1,w
-   278  01B0  0585               	andwf	5,f	;volatile
-   279  01B1                     l683:
+   274                           ;babble.c: 69:     WPUA|=(1<<2);
+   275  01B6  1509               	bsf	9,2	;volatile
+   276                           
+   277                           ;babble.c: 70:     IOCAP=1;
+   278  01B7  3001               	movlw	1
+   279  01B8  009A               	movwf	26	;volatile
    280                           
-   281                           ;babble.c: 66:     WPUA|=(1<<2);
-   282  01B1  1509               	bsf	9,2	;volatile
-   283  01B2                     l685:
-   284                           
-   285                           ;babble.c: 67:     IOCAP=1;
-   286  01B2  3001               	movlw	1
-   287  01B3  009A               	movwf	26	;volatile
-   288                           
-   289                           ;babble.c: 68:     IOCAN=0;
-   290  01B4  019B               	clrf	27	;volatile
-   291  01B5                     l687:
-   292                           
-   293                           ;babble.c: 70:     PWM1CON=(1<<7);
-   294  01B5  3080               	movlw	128
-   295  01B6  0096               	movwf	22	;volatile
-   296  01B7                     l689:
-   297                           
-   298                           ;babble.c: 71:     PR2=31;
-   299  01B7  301F               	movlw	31
-   300  01B8  0092               	movwf	18	;volatile
-   301  01B9                     l691:
+   281                           ;babble.c: 71:     IOCAN=0;
+   282  01B9  019B               	clrf	27	;volatile
+   283                           
+   284                           ;babble.c: 73:     PWM1CON=(1<<7);
+   285  01BA  3080               	movlw	128
+   286  01BB  0096               	movwf	22	;volatile
+   287                           
+   288                           ;babble.c: 74:     PR2=31;
+   289  01BC  301F               	movlw	31
+   290  01BD  0092               	movwf	18	;volatile
+   291                           
+   292                           ;babble.c: 75:     PWM1DCH=16;
+   293  01BE  3010               	movlw	16
+   294  01BF  0095               	movwf	21	;volatile
+   295                           
+   296                           ;babble.c: 76:     PWM1DCL=0;
+   297  01C0  0194               	clrf	20	;volatile
+   298                           
+   299                           ;babble.c: 77:     T2CON=(1<<2);
+   300  01C1  3004               	movlw	4
+   301  01C2  0093               	movwf	19	;volatile
    302                           
-   303                           ;babble.c: 72:     PWM1DCH=16;
-   304  01B9  3010               	movlw	16
-   305  01BA  0095               	movwf	21	;volatile
-   306  01BB                     l693:
-   307                           
-   308                           ;babble.c: 73:     PWM1DCL=0;
-   309  01BB  0194               	clrf	20	;volatile
+   303                           ;babble.c: 79:     NCO1CLK=2;
+   304  01C3  3002               	movlw	2
+   305  01C4  00AE               	movwf	46	;volatile
+   306                           
+   307                           ;babble.c: 80:     NCO1CON=0x80;
+   308  01C5  3080               	movlw	128
+   309  01C6  00AD               	movwf	45	;volatile
    310                           
-   311                           ;babble.c: 74:     T2CON=(1<<2);
-   312  01BC  3004               	movlw	4
-   313  01BD  0093               	movwf	19	;volatile
+   311                           ;babble.c: 82:     CLC1GLS0=2;
+   312  01C7  3002               	movlw	2
+   313  01C8  00B5               	movwf	53	;volatile
    314                           
-   315                           ;babble.c: 76:     NCO1CLK=2;
-   316  01BE  3002               	movlw	2
-   317  01BF  00AE               	movwf	46	;volatile
-   318                           
-   319                           ;babble.c: 77:     NCO1CON=0x80;
-   320  01C0  3080               	movlw	128
-   321  01C1  00AD               	movwf	45	;volatile
-   322                           
-   323                           ;babble.c: 79:     CLC1GLS0=2;
-   324  01C2  3002               	movlw	2
-   325  01C3  00B5               	movwf	53	;volatile
-   326  01C4                     l695:
-   327                           
-   328                           ;babble.c: 80:     CLC1GLS1=0;
-   329  01C4  01B6               	clrf	54	;volatile
-   330  01C5                     l697:
-   331                           
-   332                           ;babble.c: 81:     CLC1GLS2=0x20;
-   333  01C5  3020               	movlw	32
-   334  01C6  00B7               	movwf	55	;volatile
+   315                           ;babble.c: 83:     CLC1GLS1=0;
+   316  01C9  01B6               	clrf	54	;volatile
+   317                           
+   318                           ;babble.c: 84:     CLC1GLS2=0x20;
+   319  01CA  3020               	movlw	32
+   320  01CB  00B7               	movwf	55	;volatile
+   321                           
+   322                           ;babble.c: 85:     CLC1GLS3=0;
+   323  01CC  01B8               	clrf	56	;volatile
+   324                           
+   325                           ;babble.c: 86:     CLC1SEL0=3;
+   326  01CD  3003               	movlw	3
+   327  01CE  00B2               	movwf	50	;volatile
+   328                           
+   329                           ;babble.c: 87:     CLC1SEL1=5;
+   330  01CF  3005               	movlw	5
+   331  01D0  00B3               	movwf	51	;volatile
+   332                           
+   333                           ;babble.c: 88:     CLC1POL=0;
+   334  01D1  01B4               	clrf	52	;volatile
    335                           
-   336                           ;babble.c: 82:     CLC1GLS3=0;
-   337  01C7  01B8               	clrf	56	;volatile
-   338  01C8                     l699:
-   339                           
-   340                           ;babble.c: 83:     CLC1SEL0=3;
-   341  01C8  3003               	movlw	3
-   342  01C9  00B2               	movwf	50	;volatile
-   343  01CA                     l701:
-   344                           
-   345                           ;babble.c: 84:     CLC1SEL1=5;
-   346  01CA  3005               	movlw	5
-   347  01CB  00B3               	movwf	51	;volatile
+   336                           ;babble.c: 89:     CLC1CON=0xC1;
+   337  01D2  30C1               	movlw	193
+   338  01D3  00B1               	movwf	49	;volatile
+   339  01D4                     l709:
+   340                           
+   341                           ;babble.c: 91:         NCO1INC=(16384);
+   342  01D4  3000               	movlw	0
+   343  01D5  00AA               	movwf	42	;volatile
+   344  01D6  3040               	movlw	64
+   345  01D7  00AB               	movwf	43	;volatile
+   346  01D8  3000               	movlw	0
+   347  01D9  00AC               	movwf	44	;volatile
    348                           
-   349                           ;babble.c: 85:     CLC1POL=0;
-   350  01CC  01B4               	clrf	52	;volatile
-   351  01CD                     l703:
-   352                           
-   353                           ;babble.c: 86:     CLC1CON=0xC1;
-   354  01CD  30C1               	movlw	193
-   355  01CE  00B1               	movwf	49	;volatile
-   356  01CF                     l705:
-   357                           
-   358                           ;babble.c: 88:         NCO1INC=(16384);
-   359  01CF  3000               	movlw	0
-   360  01D0  00AA               	movwf	42	;volatile
-   361  01D1  3040               	movlw	64
-   362  01D2  00AB               	movwf	43	;volatile
-   363  01D3  3000               	movlw	0
-   364  01D4  00AC               	movwf	44	;volatile
-   365  01D5                     l707:
-   366                           
-   367                           ;babble.c: 89:         wait_trigger();
-   368  01D5  216E               	fcall	_wait_trigger
-   369  01D6                     l709:
-   370                           
-   371                           ;babble.c: 90:         babble_time=1000;
-   372  01D6  30E8               	movlw	232
-   373  01D7  00C8               	movwf	main@babble_time
-   374  01D8  3003               	movlw	3
-   375  01D9  00C9               	movwf	main@babble_time+1
-   376                           
-   377                           ;babble.c: 91:         while (babble_time--){
-   378  01DA  29EE               	goto	l715
-   379  01DB                     l711:
-   380                           
-   381                           ;babble.c: 92:             NCO1INC=read_cap()+(16384);
-   382  01DB  2186               	fcall	_read_cap
-   383  01DC  0840               	movf	?_read_cap,w
-   384  01DD  3E00               	addlw	0
-   385  01DE  00C6               	movwf	??_main
-   386  01DF  0841               	movf	?_read_cap+1,w
-   387  01E0  1803               	skipnc
-   388  01E1  3E01               	addlw	1
-   389  01E2  3E40               	addlw	64
-   390  01E3  00C7               	movwf	??_main+1
-   391  01E4  0846               	movf	??_main,w
-   392  01E5  00AA               	movwf	42	;volatile
-   393  01E6  0847               	movf	??_main+1,w
-   394  01E7  00AB               	movwf	43	;volatile
-   395  01E8  01AC               	clrf	44	;volatile
-   396  01E9                     l713:
-   397                           
-   398                           ;babble.c: 93:             msec_delay(100);
-   399  01E9  3064               	movlw	100
-   400  01EA  00C0               	movwf	msec_delay@msec
-   401  01EB  3000               	movlw	0
-   402  01EC  00C1               	movwf	msec_delay@msec+1
-   403  01ED  2172               	fcall	_msec_delay
-   404  01EE                     l715:
-   405                           
-   406                           ;babble.c: 91:         while (babble_time--){
-   407  01EE  3001               	movlw	1
-   408  01EF  02C8               	subwf	main@babble_time,f
-   409  01F0  3000               	movlw	0
-   410  01F1  1C03               	skipc
-   411  01F2  03C9               	decf	main@babble_time+1,f
-   412  01F3  02C9               	subwf	main@babble_time+1,f
-   413  01F4  0A48               	incf	main@babble_time,w
-   414  01F5  1D03               	skipz
-   415  01F6  29FB               	goto	u41
-   416  01F7  0A49               	incf	main@babble_time+1,w
-   417  01F8  1D03               	btfss	3,2
-   418  01F9  29FB               	goto	u41
-   419  01FA  29FC               	goto	u40
-   420  01FB                     u41:
-   421  01FB  29DB               	goto	l711
-   422  01FC                     u40:
-   423  01FC  29CF               	goto	l705
-   424  01FD  2800               	ljmp	start
-   425  01FE                     __end_of_main:
-   426                           
-   427                           	psect	text1
-   428  016E                     __ptext1:	
-   429 ;; *************** function _wait_trigger *****************
-   430 ;; Defined at:
-   431 ;;		line 50 in file "babble.c"
-   432 ;; Parameters:    Size  Location     Type
-   433 ;;		None
-   434 ;; Auto vars:     Size  Location     Type
-   435 ;;		None
-   436 ;; Return value:  Size  Location     Type
-   437 ;;                  1    wreg      void 
-   438 ;; Registers used:
-   439 ;;		None
-   440 ;; Tracked objects:
-   441 ;;		On entry : 0/0
-   442 ;;		On exit  : 0/0
-   443 ;;		Unchanged: 0/0
-   444 ;; Data sizes:     COMMON   BANK0
-   445 ;;      Params:         0       0
-   446 ;;      Locals:         0       0
-   447 ;;      Temps:          0       0
-   448 ;;      Totals:         0       0
-   449 ;;Total ram usage:        0 bytes
-   450 ;; Hardware stack levels used:    1
-   451 ;; This function calls:
-   452 ;;		Nothing
-   453 ;; This function is called by:
-   454 ;;		_main
-   455 ;; This function uses a non-reentrant model
-   456 ;;
-   457                           
-   458                           
-   459                           ;psect for function _wait_trigger
-   460  016E                     _wait_trigger:
-   461  016E                     l669:	
-   462                           ;incstack = 0
-   463                           ; Regs used in _wait_trigger: []
-   464                           
-   465  016E  019C               	clrf	28	;# 
-   466  016F  1C1C               	btfss	28,0	;# 
-   467  0170  296D               	goto	($+-1)	;# 
-   468  0171                     l64:
-   469  0171  0008               	return
-   470  0172                     __end_of_wait_trigger:
-   471                           
-   472                           	psect	text2
-   473  0186                     __ptext2:	
-   474 ;; *************** function _read_cap *****************
-   475 ;; Defined at:
-   476 ;;		line 38 in file "babble.c"
-   477 ;; Parameters:    Size  Location     Type
-   478 ;;		None
-   479 ;; Auto vars:     Size  Location     Type
-   480 ;;  cap_val         2    4[BANK0 ] unsigned int 
-   481 ;; Return value:  Size  Location     Type
-   482 ;;                  2    0[BANK0 ] unsigned int 
-   483 ;; Registers used:
-   484 ;;		wreg, status,2, status,0, btemp+1
-   485 ;; Tracked objects:
-   486 ;;		On entry : 0/0
-   487 ;;		On exit  : 0/0
-   488 ;;		Unchanged: 0/0
-   489 ;; Data sizes:     COMMON   BANK0
-   490 ;;      Params:         0       2
-   491 ;;      Locals:         0       2
-   492 ;;      Temps:          0       2
-   493 ;;      Totals:         0       6
-   494 ;;Total ram usage:        6 bytes
-   495 ;; Hardware stack levels used:    1
-   496 ;; This function calls:
-   497 ;;		Nothing
-   498 ;; This function is called by:
-   499 ;;		_main
-   500 ;; This function uses a non-reentrant model
-   501 ;;
-   502                           
-   503                           
-   504                           ;psect for function _read_cap
-   505  0186                     _read_cap:
-   506  0186                     l655:	
-   507                           ;incstack = 0
-   508                           ; Regs used in _read_cap: [wreg+status,2+status,0+btemp+1]
-   509                           
-   510                           
-   511                           ;babble.c: 39:     unsigned int cap_val;;babble.c: 40:         TMR0=0;
-   512  0186  0181               	clrf	1	;volatile
-   513  0187                     l657:
-   514                           
-   515                           ;babble.c: 41:         TRISA|=(1<<2);
-   516  0187  1506               	bsf	6,2	;volatile
-   517  0188  1D05               	btfss	5,2	;# 
-   518  0189  2985               	goto	($+-1)	;# 
-   519  018A                     l659:
+   349                           ;babble.c: 92:         wait_trigger();
+   350  01DA  2172               	fcall	_wait_trigger
+   351                           
+   352                           ;babble.c: 93:         babble_time=90;
+   353  01DB  305A               	movlw	90
+   354  01DC  00C8               	movwf	main@babble_time
+   355  01DD  3000               	movlw	0
+   356  01DE  00C9               	movwf	main@babble_time+1
+   357  01DF                     l719:	
+   358                           ;babble.c: 94:         while (babble_time--){
+   359                           
+   360                           
+   361                           ;babble.c: 94:         while (babble_time--){
+   362  01DF  3001               	movlw	1
+   363  01E0  02C8               	subwf	main@babble_time,f
+   364  01E1  3000               	movlw	0
+   365  01E2  1C03               	skipc
+   366  01E3  03C9               	decf	main@babble_time+1,f
+   367  01E4  02C9               	subwf	main@babble_time+1,f
+   368  01E5  0A48               	incf	main@babble_time,w
+   369  01E6  1903               	btfsc	3,2
+   370  01E7  0A49               	incf	main@babble_time+1,w
+   371  01E8  1903               	btfsc	3,2
+   372  01E9  29D4               	goto	l709
+   373                           
+   374                           ;babble.c: 95:             NCO1INC=read_cap()+(16384);
+   375  01EA  2189               	fcall	_read_cap
+   376  01EB  0840               	movf	?_read_cap,w
+   377  01EC  3E00               	addlw	0
+   378  01ED  00C6               	movwf	??_main
+   379  01EE  0841               	movf	?_read_cap+1,w
+   380  01EF  1803               	skipnc
+   381  01F0  3E01               	addlw	1
+   382  01F1  3E40               	addlw	64
+   383  01F2  00C7               	movwf	??_main+1
+   384  01F3  0846               	movf	??_main,w
+   385  01F4  00AA               	movwf	42	;volatile
+   386  01F5  0847               	movf	??_main+1,w
+   387  01F6  00AB               	movwf	43	;volatile
+   388  01F7  01AC               	clrf	44	;volatile
+   389                           
+   390                           ;babble.c: 96:             msec_delay(32);
+   391  01F8  3020               	movlw	32
+   392  01F9  00C0               	movwf	msec_delay@msec
+   393  01FA  3000               	movlw	0
+   394  01FB  00C1               	movwf	msec_delay@msec+1
+   395  01FC  2176               	fcall	_msec_delay
+   396  01FD  29DF               	goto	l719
+   397  01FE                     __end_of_main:
+   398                           
+   399                           	psect	text1
+   400  0172                     __ptext1:	
+   401 ;; *************** function _wait_trigger *****************
+   402 ;; Defined at:
+   403 ;;		line 53 in file "babble.c"
+   404 ;; Parameters:    Size  Location     Type
+   405 ;;		None
+   406 ;; Auto vars:     Size  Location     Type
+   407 ;;		None
+   408 ;; Return value:  Size  Location     Type
+   409 ;;                  1    wreg      void 
+   410 ;; Registers used:
+   411 ;;		None
+   412 ;; Tracked objects:
+   413 ;;		On entry : 0/0
+   414 ;;		On exit  : 0/0
+   415 ;;		Unchanged: 0/0
+   416 ;; Data sizes:     COMMON   BANK0
+   417 ;;      Params:         0       0
+   418 ;;      Locals:         0       0
+   419 ;;      Temps:          0       0
+   420 ;;      Totals:         0       0
+   421 ;;Total ram usage:        0 bytes
+   422 ;; Hardware stack levels used:    1
+   423 ;; This function calls:
+   424 ;;		Nothing
+   425 ;; This function is called by:
+   426 ;;		_main
+   427 ;; This function uses a non-reentrant model
+   428 ;;
+   429                           
+   430                           
+   431                           ;psect for function _wait_trigger
+   432  0172                     _wait_trigger:
+   433                           
+   434                           ;incstack = 0
+   435                           ; Regs used in _wait_trigger: []
+   436  0172  019C               	clrf	28	;# 
+   437  0173  1C1C               	btfss	28,0	;# 
+   438  0174  2971               	goto	($+-1)	;# 
+   439  0175  0008               	return
+   440  0176                     __end_of_wait_trigger:
+   441                           
+   442                           	psect	text2
+   443  0189                     __ptext2:	
+   444 ;; *************** function _read_cap *****************
+   445 ;; Defined at:
+   446 ;;		line 40 in file "babble.c"
+   447 ;; Parameters:    Size  Location     Type
+   448 ;;		None
+   449 ;; Auto vars:     Size  Location     Type
+   450 ;;  cap_val         2    4[BANK0 ] unsigned int 
+   451 ;; Return value:  Size  Location     Type
+   452 ;;                  2    0[BANK0 ] unsigned int 
+   453 ;; Registers used:
+   454 ;;		wreg, status,2, status,0, btemp+1
+   455 ;; Tracked objects:
+   456 ;;		On entry : 0/0
+   457 ;;		On exit  : 0/0
+   458 ;;		Unchanged: 0/0
+   459 ;; Data sizes:     COMMON   BANK0
+   460 ;;      Params:         0       2
+   461 ;;      Locals:         0       2
+   462 ;;      Temps:          0       2
+   463 ;;      Totals:         0       6
+   464 ;;Total ram usage:        6 bytes
+   465 ;; Hardware stack levels used:    1
+   466 ;; This function calls:
+   467 ;;		Nothing
+   468 ;; This function is called by:
+   469 ;;		_main
+   470 ;; This function uses a non-reentrant model
+   471 ;;
+   472                           
+   473                           
+   474                           ;psect for function _read_cap
+   475  0189                     _read_cap:
+   476                           
+   477                           ;babble.c: 41:     unsigned int cap_val;;babble.c: 42:     OPTION_REG=1;
+   478                           
+   479                           ;incstack = 0
+   480                           ; Regs used in _read_cap: [wreg+status,2+status,0+btemp+1]
+   481  0189  3001               	movlw	1
+   482  018A  008E               	movwf	14	;volatile
+   483                           
+   484                           ;babble.c: 43:     TMR0=0;
+   485  018B  0181               	clrf	1	;volatile
+   486                           
+   487                           ;babble.c: 44:     TRISA|=(1<<2);
+   488  018C  1506               	bsf	6,2	;volatile
+   489  018D  1D05               	btfss	5,2	;# 
+   490  018E  2988               	goto	($+-1)	;# 
+   491                           
+   492                           ;babble.c: 47:     cap_val=TMR0;
+   493  018F  0801               	movf	1,w	;volatile
+   494  0190  00C2               	movwf	??_read_cap
+   495  0191  01C3               	clrf	??_read_cap+1
+   496  0192  0842               	movf	??_read_cap,w
+   497  0193  00C4               	movwf	read_cap@cap_val
+   498  0194  0843               	movf	??_read_cap+1,w
+   499  0195  00C5               	movwf	read_cap@cap_val+1
+   500                           
+   501                           ;babble.c: 48:     TRISA&=~(1<<2);
+   502  0196  30FB               	movlw	251
+   503  0197  00FF               	movwf	127
+   504  0198  087F               	movf	127,w
+   505  0199  0586               	andwf	6,f	;volatile
+   506                           
+   507                           ;babble.c: 49:     LATA&=~(1<<2);
+   508  019A  30FB               	movlw	251
+   509  019B  00FF               	movwf	127
+   510  019C  087F               	movf	127,w
+   511  019D  0587               	andwf	7,f	;volatile
+   512                           
+   513                           ;babble.c: 50:     return cap_val;
+   514  019E  0845               	movf	read_cap@cap_val+1,w
+   515  019F  00C1               	movwf	?_read_cap+1
+   516  01A0  0844               	movf	read_cap@cap_val,w
+   517  01A1  00C0               	movwf	?_read_cap
+   518  01A2  0008               	return
+   519  01A3                     __end_of_read_cap:
    520                           
-   521                           ;babble.c: 44:         cap_val=TMR0;
-   522  018A  0801               	movf	1,w	;volatile
-   523  018B  00C2               	movwf	??_read_cap
-   524  018C  01C3               	clrf	??_read_cap+1
-   525  018D  0842               	movf	??_read_cap,w
-   526  018E  00C4               	movwf	read_cap@cap_val
-   527  018F  0843               	movf	??_read_cap+1,w
-   528  0190  00C5               	movwf	read_cap@cap_val+1
-   529  0191                     l661:
-   530                           
-   531                           ;babble.c: 45:         TRISA&=~(1<<2);
-   532  0191  30FB               	movlw	251
-   533  0192  00FF               	movwf	btemp+1
-   534  0193  087F               	movf	btemp+1,w
-   535  0194  0586               	andwf	6,f	;volatile
-   536  0195                     l663:
-   537                           
-   538                           ;babble.c: 46:         LATA&=~(1<<2);
-   539  0195  30FB               	movlw	251
-   540  0196  00FF               	movwf	btemp+1
-   541  0197  087F               	movf	btemp+1,w
-   542  0198  0587               	andwf	7,f	;volatile
-   543  0199                     l665:
-   544                           
-   545                           ;babble.c: 47:         return cap_val;
-   546  0199  0845               	movf	read_cap@cap_val+1,w
-   547  019A  00C1               	movwf	?_read_cap+1
-   548  019B  0844               	movf	read_cap@cap_val,w
-   549  019C  00C0               	movwf	?_read_cap
-   550  019D                     l61:
-   551  019D  0008               	return
-   552  019E                     __end_of_read_cap:
-   553                           
-   554                           	psect	text3
-   555  0172                     __ptext3:	
-   556 ;; *************** function _msec_delay *****************
-   557 ;; Defined at:
-   558 ;;		line 28 in file "babble.c"
-   559 ;; Parameters:    Size  Location     Type
-   560 ;;  msec            2    0[BANK0 ] unsigned int 
-   561 ;; Auto vars:     Size  Location     Type
-   562 ;;		None
-   563 ;; Return value:  Size  Location     Type
-   564 ;;                  1    wreg      void 
-   565 ;; Registers used:
-   566 ;;		wreg, status,2, status,0
-   567 ;; Tracked objects:
-   568 ;;		On entry : 0/0
-   569 ;;		On exit  : 0/0
-   570 ;;		Unchanged: 0/0
-   571 ;; Data sizes:     COMMON   BANK0
-   572 ;;      Params:         0       2
-   573 ;;      Locals:         0       0
-   574 ;;      Temps:          0       0
-   575 ;;      Totals:         0       2
-   576 ;;Total ram usage:        2 bytes
-   577 ;; Hardware stack levels used:    1
-   578 ;; This function calls:
-   579 ;;		Nothing
-   580 ;; This function is called by:
-   581 ;;		_main
-   582 ;; This function uses a non-reentrant model
-   583 ;;
-   584                           
-   585                           
-   586                           ;psect for function _msec_delay
-   587  0172                     _msec_delay:
-   588  0172                     l651:	
-   589                           ;incstack = 0
-   590                           ; Regs used in _msec_delay: [wreg+status,2+status,0]
-   591                           
-   592                           
-   593                           ;babble.c: 29:     while(msec--){
-   594  0172  2977               	goto	l653
-   595  0173                     l56:
-   596  0173  0181               	clrf	1	;# 
-   597  0174  110B               	bcf	11,2	;# 
-   598  0175  1D0B               	btfss	11,2	;# 
-   599  0176  2971               	goto	($+-1)	;# 
-   600  0177                     l653:
-   601                           
-   602                           ;babble.c: 29:     while(msec--){
-   603  0177  3001               	movlw	1
-   604  0178  02C0               	subwf	msec_delay@msec,f
-   605  0179  3000               	movlw	0
-   606  017A  1C03               	skipc
-   607  017B  03C1               	decf	msec_delay@msec+1,f
-   608  017C  02C1               	subwf	msec_delay@msec+1,f
-   609  017D  0A40               	incf	msec_delay@msec,w
-   610  017E  1D03               	skipz
-   611  017F  2984               	goto	u31
-   612  0180  0A41               	incf	msec_delay@msec+1,w
-   613  0181  1D03               	btfss	3,2
-   614  0182  2984               	goto	u31
-   615  0183  2985               	goto	u30
-   616  0184                     u31:
-   617  0184  2973               	goto	l56
-   618  0185                     u30:
-   619  0185                     l58:
-   620  0185  0008               	return
-   621  0186                     __end_of_msec_delay:
-   622  007E                     btemp	set	126	;btemp
-   623  007E                     wtemp0	set	126
-   624                           
-   625                           	psect	config
-   626                           
-   627                           ;Config register CONFIG @ 0x2007
-   628                           ;	Oscillator Selection bits
-   629                           ;	FOSC = INTOSC, INTOSC oscillator: CLKIN function disabled
-   630                           ;	Brown-out Reset Enable
-   631                           ;	BOREN = OFF, Brown-out Reset disabled
-   632                           ;	Watchdog Timer Enable
-   633                           ;	WDTE = OFF, WDT disabled
-   634                           ;	Power-up Timer Enable bit
-   635                           ;	PWRTE = OFF, PWRT disabled
-   636                           ;	MCLR Pin Function Select bit
-   637                           ;	MCLRE = ON, MCLR pin function is MCLR
-   638                           ;	Code Protection bit
-   639                           ;	CP = OFF, Program memory code protection is disabled
-   640                           ;	Low-Voltage Programming Enable
-   641                           ;	LVP = OFF, High-voltage on MCLR/VPP must be used for programming
-   642                           ;	Brown-out Reset Selection bits
-   643                           ;	LPBOR = ON, BOR enabled
-   644                           ;	Brown-out Reset Voltage Selection
-   645                           ;	BORV = LO, Brown-out Reset Voltage (Vbor), low trip point selected.
-   646                           ;	Flash Memory Self-Write Protection
-   647                           ;	WRT = OFF, Write protection off
-   648  2007                     	org	8199
-   649  2007  3EE0               	dw	16096
+   521                           	psect	text3
+   522  0176                     __ptext3:	
+   523 ;; *************** function _msec_delay *****************
+   524 ;; Defined at:
+   525 ;;		line 28 in file "babble.c"
+   526 ;; Parameters:    Size  Location     Type
+   527 ;;  msec            2    0[BANK0 ] unsigned int 
+   528 ;; Auto vars:     Size  Location     Type
+   529 ;;		None
+   530 ;; Return value:  Size  Location     Type
+   531 ;;                  1    wreg      void 
+   532 ;; Registers used:
+   533 ;;		wreg, status,2, status,0
+   534 ;; Tracked objects:
+   535 ;;		On entry : 0/0
+   536 ;;		On exit  : 0/0
+   537 ;;		Unchanged: 0/0
+   538 ;; Data sizes:     COMMON   BANK0
+   539 ;;      Params:         0       2
+   540 ;;      Locals:         0       0
+   541 ;;      Temps:          0       0
+   542 ;;      Totals:         0       2
+   543 ;;Total ram usage:        2 bytes
+   544 ;; Hardware stack levels used:    1
+   545 ;; This function calls:
+   546 ;;		Nothing
+   547 ;; This function is called by:
+   548 ;;		_main
+   549 ;; This function uses a non-reentrant model
+   550 ;;
+   551                           
+   552                           
+   553                           ;psect for function _msec_delay
+   554  0176                     _msec_delay:
+   555                           
+   556                           ;babble.c: 29:     OPTION_REG=3;
+   557                           
+   558                           ;incstack = 0
+   559                           ; Regs used in _msec_delay: [wreg+status,2+status,0]
+   560  0176  3003               	movlw	3
+   561  0177  008E               	movwf	14	;volatile
+   562  0178                     l655:	
+   563                           ;babble.c: 30:     while(msec--){
+   564                           
+   565                           
+   566                           ;babble.c: 30:     while(msec--){
+   567  0178  3001               	movlw	1
+   568  0179  02C0               	subwf	msec_delay@msec,f
+   569  017A  3000               	movlw	0
+   570  017B  1C03               	skipc
+   571  017C  03C1               	decf	msec_delay@msec+1,f
+   572  017D  02C1               	subwf	msec_delay@msec+1,f
+   573  017E  0A40               	incf	msec_delay@msec,w
+   574  017F  1903               	btfsc	3,2
+   575  0180  0A41               	incf	msec_delay@msec+1,w
+   576  0181  1903               	btfsc	3,2
+   577  0182  0008               	return
+   578  0183  3005               	movlw	5	;# 
+   579  0184  0081               	movwf	1	;# 
+   580  0185  110B               	bcf	11,2	;# 
+   581  0186  1D0B               	btfss	11,2	;# 
+   582  0187  2975               	goto	($+-1)	;# 
+   583  0188  2978               	goto	l655
+   584  0189                     __end_of_msec_delay:
+   585  007E                     btemp	set	126	;btemp
+   586  007E                     wtemp0	set	126
+   587                           
+   588                           	psect	config
+   589                           
+   590                           ;Config register CONFIG @ 0x2007
+   591                           ;	Oscillator Selection bits
+   592                           ;	FOSC = INTOSC, INTOSC oscillator: CLKIN function disabled
+   593                           ;	Brown-out Reset Enable
+   594                           ;	BOREN = OFF, Brown-out Reset disabled
+   595                           ;	Watchdog Timer Enable
+   596                           ;	WDTE = OFF, WDT disabled
+   597                           ;	Power-up Timer Enable bit
+   598                           ;	PWRTE = OFF, PWRT disabled
+   599                           ;	MCLR Pin Function Select bit
+   600                           ;	MCLRE = ON, MCLR pin function is MCLR
+   601                           ;	Code Protection bit
+   602                           ;	CP = OFF, Program memory code protection is disabled
+   603                           ;	Low-Voltage Programming Enable
+   604                           ;	LVP = OFF, High-voltage on MCLR/VPP must be used for programming
+   605                           ;	Brown-out Reset Selection bits
+   606                           ;	LPBOR = ON, BOR enabled
+   607                           ;	Brown-out Reset Voltage Selection
+   608                           ;	BORV = LO, Brown-out Reset Voltage (Vbor), low trip point selected.
+   609                           ;	Flash Memory Self-Write Protection
+   610                           ;	WRT = OFF, Write protection off
+   611  2007                     	org	8199
+   612  2007  3EE0               	dw	16096
 
 Data Sizes:
     Strings     0
@@ -732,41 +695,29 @@ BITBANK0            3E      0       0       6        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.20 build 20200408173844 
-Symbol Table                                                                                   Thu Oct 22 22:41:22 2020
+Symbol Table                                                                                   Fri Oct 23 16:57:50 2020
 
-                     l61 019D                       l56 0173                       l64 0171  
-                     l58 0185                       u30 0185                       u31 0184  
-                     u40 01FC                       u41 01FB                      TMR0 0001  
-                    l701 01CA                      l711 01DB                      l703 01CD  
-                    l713 01E9                      l705 01CF                      l651 0172  
-                    l715 01EE                      l707 01D5                      l653 0177  
-                    l661 0191                      l709 01D6                      l663 0195  
-                    l655 0186                      l671 019E                      l665 0199  
-                    l657 0187                      l681 01AD                      l673 01A2  
-                    l659 018A                      l691 01B9                      l683 01B1  
-                    l675 01A3                      l669 016E                      l693 01BB  
-                    l685 01B2                      l677 01A5                      l695 01C4  
-                    l687 01B5                      l679 01A9                      l697 01C5  
-                    l689 01B7                      l699 01C8                      _PR2 0012  
-                   IOCAF 001C                     PORTA 0005                     _LATA 0007  
-                   _TMR0 0001                     _WPUA 0009                     _main 019E  
-                   btemp 007E                     start 0000                    INTCON 000B  
-                  ?_main 0040                    _T2CON 0013                    _IOCAN 001B  
-                  _IOCAP 001A                    _PORTA 0005                    _TRISA 0006  
-                  status 0003                    wtemp0 007E          __initialization 01FE  
-           __end_of_main 01FE                   ??_main 0046                   _ANSELA 0008  
-                 _OSCCON 0010         __end_of_read_cap 019E  __end_of__initialization 01FE  
-         __pcstackCOMMON 0000               __pmaintext 019E                  _CLC1CON 0031  
-                _CLC1POL 0034                  _NCO1CLK 002E                  _NCO1CON 002D  
-                _NCO1INC 002A                  _PWM1DCH 0015                  _PWM1DCL 0014  
-                _PWM1CON 0016                ?_read_cap 0040                  __ptext1 016E  
-                __ptext2 0186                  __ptext3 0172               _msec_delay 0172  
-   end_of_initialization 01FE               ??_read_cap 0042            ?_wait_trigger 0040  
-        main@babble_time 0048           ??_wait_trigger 0000          read_cap@cap_val 0044  
-    start_initialization 01FE              ?_msec_delay 0040           msec_delay@msec 0040  
-              ___latbits 0000            __pcstackBANK0 0040        __size_of_read_cap 0018  
-    __size_of_msec_delay 0014     __end_of_wait_trigger 0172                 _CLC1GLS0 0035  
-               _CLC1GLS1 0036                 _CLC1GLS2 0037                 _CLC1GLS3 0038  
-               _CLC1SEL0 0032                 _CLC1SEL1 0033             ??_msec_delay 0000  
-          __size_of_main 0060                 _read_cap 0186    __size_of_wait_trigger 0004  
-     __end_of_msec_delay 0186             _wait_trigger 016E               _OPTION_REG 000E  
+                    TMR0 0001                      l709 01D4                      l655 0178  
+                    l719 01DF                      _PR2 0012                     IOCAF 001C  
+                   PORTA 0005                     _LATA 0007                     _TMR0 0001  
+                   _WPUA 0009                     _main 01A3                     btemp 007E  
+                   start 0000                    INTCON 000B                    ?_main 0040  
+                  _T2CON 0013                    _IOCAN 001B                    _IOCAP 001A  
+                  _PORTA 0005                    _TRISA 0006                    status 0003  
+                  wtemp0 007E          __initialization 01FE             __end_of_main 01FE  
+                 ??_main 0046                   _ANSELA 0008                   _OSCCON 0010  
+       __end_of_read_cap 01A3  __end_of__initialization 01FE           __pcstackCOMMON 0000  
+             __pmaintext 01A3                  _CLC1CON 0031                  _CLC1POL 0034  
+                _NCO1CLK 002E                  _NCO1CON 002D                  _NCO1INC 002A  
+                _PWM1DCH 0015                  _PWM1DCL 0014                  _PWM1CON 0016  
+              ?_read_cap 0040                  __ptext1 0172                  __ptext2 0189  
+                __ptext3 0176               _msec_delay 0176     end_of_initialization 01FE  
+             ??_read_cap 0042            ?_wait_trigger 0040          main@babble_time 0048  
+         ??_wait_trigger 0000          read_cap@cap_val 0044      start_initialization 01FE  
+            ?_msec_delay 0040           msec_delay@msec 0040                ___latbits 0000  
+          __pcstackBANK0 0040        __size_of_read_cap 001A      __size_of_msec_delay 0013  
+   __end_of_wait_trigger 0176                 _CLC1GLS0 0035                 _CLC1GLS1 0036  
+               _CLC1GLS2 0037                 _CLC1GLS3 0038                 _CLC1SEL0 0032  
+               _CLC1SEL1 0033             ??_msec_delay 0000            __size_of_main 005B  
+               _read_cap 0189    __size_of_wait_trigger 0004       __end_of_msec_delay 0189  
+           _wait_trigger 0172               _OPTION_REG 000E  

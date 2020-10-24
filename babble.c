@@ -26,9 +26,11 @@
 
 
 void msec_delay(unsigned int msec){
+    OPTION_REG=3; // T0clk=Fosc/64 
     while(msec--){
         // délais
-        asm("CLRF TMR0");
+        asm("MOVLW 5\n");
+        asm("MOVWF TMR0\n");
         asm("BCF INTCON,2");
         asm("BTFSS INTCON,2");
         asm("GOTO $-1");
@@ -37,14 +39,15 @@ void msec_delay(unsigned int msec){
 
 unsigned int read_cap(){
     unsigned int cap_val;
-        TMR0=0;
-        TRISA|=CAP_P;
-        asm("btfss PORTA,2");
-        asm("goto $-1");
-        cap_val=TMR0;
-        TRISA&=~CAP_P;
-        LATA&=~CAP_P;
-        return cap_val;
+    OPTION_REG=1; // T0clk=Fosc/16
+    TMR0=0;
+    TRISA|=CAP_P;
+    asm("btfss PORTA,2");
+    asm("goto $-1");
+    cap_val=TMR0;
+    TRISA&=~CAP_P;
+    LATA&=~CAP_P;
+    return cap_val;
 }
 
 void wait_trigger(){
@@ -87,10 +90,10 @@ void main(void) {
     while (1){
         NCO1INC=NCO_CAL;
         wait_trigger();
-        babble_time=1000;
+        babble_time=90; // ~3 secondes
         while (babble_time--){
             NCO1INC=read_cap()+NCO_CAL;
-            msec_delay(100);
+            msec_delay(32);
         }
     }
     return;

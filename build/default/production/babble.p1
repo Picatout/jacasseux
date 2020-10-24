@@ -1,5 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"59 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h
+"493 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 493: extern volatile unsigned char OPTION_REG __attribute__((address(0x00E)));
+[v _OPTION_REG `Vuc ~T0 @X0 0 e@14 ]
+"59
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 59: extern volatile unsigned char TMR0 __attribute__((address(0x001)));
 [v _TMR0 `Vuc ~T0 @X0 0 e@1 ]
 "195
@@ -15,9 +18,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "259
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 259: extern volatile unsigned char ANSELA __attribute__((address(0x008)));
 [v _ANSELA `Vuc ~T0 @X0 0 e@8 ]
-"493
-[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 493: extern volatile unsigned char OPTION_REG __attribute__((address(0x00E)));
-[v _OPTION_REG `Vuc ~T0 @X0 0 e@14 ]
 "157
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC10-12Fxxx_DFP/1.3.46/xc8/pic/include/proc/pic10f322.h: 157: extern volatile unsigned char PORTA __attribute__((address(0x005)));
 [v _PORTA `Vuc ~T0 @X0 0 e@5 ]
@@ -313,211 +313,220 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _msec `ui ~T0 @X0 1 r1 ]
 [f ]
 "29
-[; ;babble.c: 29:     while(msec--){
+[; ;babble.c: 29:     OPTION_REG=3;
+[e = _OPTION_REG -> -> 3 `i `uc ]
+"30
+[; ;babble.c: 30:     while(msec--){
 [e $U 144  ]
 [e :U 145 ]
 {
-"31
-[; ;babble.c: 31:         __asm("CLRF TMR0");
-[; <" CLRF TMR0 ;# ">
 "32
-[; ;babble.c: 32:         __asm("BCF INTCON,2");
-[; <" BCF INTCON,2 ;# ">
+[; ;babble.c: 32:         __asm("MOVLW 5\n");
+[; <" MOVLW 5 ;# ">
 "33
-[; ;babble.c: 33:         __asm("BTFSS INTCON,2");
-[; <" BTFSS INTCON,2 ;# ">
+[; ;babble.c: 33:         __asm("MOVWF TMR0\n");
+[; <" MOVWF TMR0 ;# ">
 "34
-[; ;babble.c: 34:         __asm("GOTO $-1");
-[; <" GOTO $-1 ;# ">
+[; ;babble.c: 34:         __asm("BCF INTCON,2");
+[; <" BCF INTCON,2 ;# ">
 "35
-[; ;babble.c: 35:    }
+[; ;babble.c: 35:         __asm("BTFSS INTCON,2");
+[; <" BTFSS INTCON,2 ;# ">
+"36
+[; ;babble.c: 36:         __asm("GOTO $-1");
+[; <" GOTO $-1 ;# ">
+"37
+[; ;babble.c: 37:    }
 }
 [e :U 144 ]
-"29
-[; ;babble.c: 29:     while(msec--){
+"30
+[; ;babble.c: 30:     while(msec--){
 [e $ != -- _msec -> -> 1 `i `ui -> -> 0 `i `ui 145  ]
 [e :U 146 ]
-"36
-[; ;babble.c: 36: }
+"38
+[; ;babble.c: 38: }
 [e :UE 143 ]
 }
-"38
-[; ;babble.c: 38: unsigned int read_cap(){
+"40
+[; ;babble.c: 40: unsigned int read_cap(){
 [v _read_cap `(ui ~T0 @X0 1 ef ]
 {
 [e :U _read_cap ]
 [f ]
-"39
-[; ;babble.c: 39:     unsigned int cap_val;
-[v _cap_val `ui ~T0 @X0 1 a ]
-"40
-[; ;babble.c: 40:         TMR0=0;
-[e = _TMR0 -> -> 0 `i `uc ]
 "41
-[; ;babble.c: 41:         TRISA|=(1<<2);
-[e =| _TRISA -> << -> 1 `i -> 2 `i `Vuc ]
+[; ;babble.c: 41:     unsigned int cap_val;
+[v _cap_val `ui ~T0 @X0 1 a ]
 "42
-[; ;babble.c: 42:         __asm("btfss PORTA,2");
-[; <" btfss PORTA,2 ;# ">
+[; ;babble.c: 42:     OPTION_REG=1;
+[e = _OPTION_REG -> -> 1 `i `uc ]
 "43
-[; ;babble.c: 43:         __asm("goto $-1");
-[; <" goto $-1 ;# ">
+[; ;babble.c: 43:     TMR0=0;
+[e = _TMR0 -> -> 0 `i `uc ]
 "44
-[; ;babble.c: 44:         cap_val=TMR0;
-[e = _cap_val -> _TMR0 `ui ]
+[; ;babble.c: 44:     TRISA|=(1<<2);
+[e =| _TRISA -> << -> 1 `i -> 2 `i `Vuc ]
 "45
-[; ;babble.c: 45:         TRISA&=~(1<<2);
-[e =& _TRISA -> ~ << -> 1 `i -> 2 `i `Vuc ]
+[; ;babble.c: 45:     __asm("btfss PORTA,2");
+[; <" btfss PORTA,2 ;# ">
 "46
-[; ;babble.c: 46:         LATA&=~(1<<2);
-[e =& _LATA -> ~ << -> 1 `i -> 2 `i `Vuc ]
+[; ;babble.c: 46:     __asm("goto $-1");
+[; <" goto $-1 ;# ">
 "47
-[; ;babble.c: 47:         return cap_val;
+[; ;babble.c: 47:     cap_val=TMR0;
+[e = _cap_val -> _TMR0 `ui ]
+"48
+[; ;babble.c: 48:     TRISA&=~(1<<2);
+[e =& _TRISA -> ~ << -> 1 `i -> 2 `i `Vuc ]
+"49
+[; ;babble.c: 49:     LATA&=~(1<<2);
+[e =& _LATA -> ~ << -> 1 `i -> 2 `i `Vuc ]
+"50
+[; ;babble.c: 50:     return cap_val;
 [e ) _cap_val ]
 [e $UE 147  ]
-"48
-[; ;babble.c: 48: }
+"51
+[; ;babble.c: 51: }
 [e :UE 147 ]
 }
-"50
-[; ;babble.c: 50: void wait_trigger(){
+"53
+[; ;babble.c: 53: void wait_trigger(){
 [v _wait_trigger `(v ~T0 @X0 1 ef ]
 {
 [e :U _wait_trigger ]
 [f ]
-"51
-[; ;babble.c: 51:     __asm("clrf IOCAF\n" "btfss IOCAF,0\n" "goto $-1\n");
+"54
+[; ;babble.c: 54:     __asm("clrf IOCAF\n" "btfss IOCAF,0\n" "goto $-1\n");
 [; <" clrf IOCAF ;# ">
 [; <" btfss IOCAF,0 ;# ">
 [; <" goto $-1 ;# ">
-"56
-[; ;babble.c: 56: }
+"59
+[; ;babble.c: 59: }
 [e :UE 148 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"58
-[; ;babble.c: 58: void main(void) {
+"61
+[; ;babble.c: 61: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"59
-[; ;babble.c: 59:     unsigned int babble_time;
-[v _babble_time `ui ~T0 @X0 1 a ]
-"60
-[; ;babble.c: 60:     OSCCON|=(7<<4);
-[e =| _OSCCON -> << -> 7 `i -> 4 `i `Vuc ]
-"61
-[; ;babble.c: 61:     ANSELA=0;
-[e = _ANSELA -> -> 0 `i `uc ]
 "62
-[; ;babble.c: 62:     OPTION_REG=1;
-[e = _OPTION_REG -> -> 1 `i `uc ]
+[; ;babble.c: 62:     unsigned int babble_time;
+[v _babble_time `ui ~T0 @X0 1 a ]
 "63
-[; ;babble.c: 63:     TRISA&=~((1<<1)|(1<<2));
-[e =& _TRISA -> ~ | << -> 1 `i -> 1 `i << -> 1 `i -> 2 `i `Vuc ]
+[; ;babble.c: 63:     OSCCON|=(7<<4);
+[e =| _OSCCON -> << -> 7 `i -> 4 `i `Vuc ]
 "64
-[; ;babble.c: 64:     LATA&=~((1<<1)|(1<<2));
-[e =& _LATA -> ~ | << -> 1 `i -> 1 `i << -> 1 `i -> 2 `i `Vuc ]
+[; ;babble.c: 64:     ANSELA=0;
+[e = _ANSELA -> -> 0 `i `uc ]
 "65
-[; ;babble.c: 65:     PORTA&=~((1<<2));
-[e =& _PORTA -> ~ << -> 1 `i -> 2 `i `Vuc ]
+[; ;babble.c: 65:     OPTION_REG=1;
+[e = _OPTION_REG -> -> 1 `i `uc ]
 "66
-[; ;babble.c: 66:     WPUA|=(1<<2);
-[e =| _WPUA -> << -> 1 `i -> 2 `i `Vuc ]
+[; ;babble.c: 66:     TRISA&=~((1<<1)|(1<<2));
+[e =& _TRISA -> ~ | << -> 1 `i -> 1 `i << -> 1 `i -> 2 `i `Vuc ]
 "67
-[; ;babble.c: 67:     IOCAP=1;
-[e = _IOCAP -> -> 1 `i `uc ]
+[; ;babble.c: 67:     LATA&=~((1<<1)|(1<<2));
+[e =& _LATA -> ~ | << -> 1 `i -> 1 `i << -> 1 `i -> 2 `i `Vuc ]
 "68
-[; ;babble.c: 68:     IOCAN=0;
-[e = _IOCAN -> -> 0 `i `uc ]
+[; ;babble.c: 68:     PORTA&=~((1<<2));
+[e =& _PORTA -> ~ << -> 1 `i -> 2 `i `Vuc ]
+"69
+[; ;babble.c: 69:     WPUA|=(1<<2);
+[e =| _WPUA -> << -> 1 `i -> 2 `i `Vuc ]
 "70
-[; ;babble.c: 70:     PWM1CON=(1<<7);
-[e = _PWM1CON -> << -> 1 `i -> 7 `i `uc ]
+[; ;babble.c: 70:     IOCAP=1;
+[e = _IOCAP -> -> 1 `i `uc ]
 "71
-[; ;babble.c: 71:     PR2=31;
-[e = _PR2 -> -> 31 `i `uc ]
-"72
-[; ;babble.c: 72:     PWM1DCH=16;
-[e = _PWM1DCH -> -> 16 `i `uc ]
+[; ;babble.c: 71:     IOCAN=0;
+[e = _IOCAN -> -> 0 `i `uc ]
 "73
-[; ;babble.c: 73:     PWM1DCL=0;
-[e = _PWM1DCL -> -> 0 `i `uc ]
+[; ;babble.c: 73:     PWM1CON=(1<<7);
+[e = _PWM1CON -> << -> 1 `i -> 7 `i `uc ]
 "74
-[; ;babble.c: 74:     T2CON=(1<<2);
-[e = _T2CON -> << -> 1 `i -> 2 `i `uc ]
+[; ;babble.c: 74:     PR2=31;
+[e = _PR2 -> -> 31 `i `uc ]
+"75
+[; ;babble.c: 75:     PWM1DCH=16;
+[e = _PWM1DCH -> -> 16 `i `uc ]
 "76
-[; ;babble.c: 76:     NCO1CLK=2;
-[e = _NCO1CLK -> -> 2 `i `uc ]
+[; ;babble.c: 76:     PWM1DCL=0;
+[e = _PWM1DCL -> -> 0 `i `uc ]
 "77
-[; ;babble.c: 77:     NCO1CON=0x80;
-[e = _NCO1CON -> -> 128 `i `uc ]
+[; ;babble.c: 77:     T2CON=(1<<2);
+[e = _T2CON -> << -> 1 `i -> 2 `i `uc ]
 "79
-[; ;babble.c: 79:     CLC1GLS0=2;
-[e = _CLC1GLS0 -> -> 2 `i `uc ]
+[; ;babble.c: 79:     NCO1CLK=2;
+[e = _NCO1CLK -> -> 2 `i `uc ]
 "80
-[; ;babble.c: 80:     CLC1GLS1=0;
-[e = _CLC1GLS1 -> -> 0 `i `uc ]
-"81
-[; ;babble.c: 81:     CLC1GLS2=0x20;
-[e = _CLC1GLS2 -> -> 32 `i `uc ]
+[; ;babble.c: 80:     NCO1CON=0x80;
+[e = _NCO1CON -> -> 128 `i `uc ]
 "82
-[; ;babble.c: 82:     CLC1GLS3=0;
-[e = _CLC1GLS3 -> -> 0 `i `uc ]
+[; ;babble.c: 82:     CLC1GLS0=2;
+[e = _CLC1GLS0 -> -> 2 `i `uc ]
 "83
-[; ;babble.c: 83:     CLC1SEL0=3;
-[e = _CLC1SEL0 -> -> 3 `i `uc ]
+[; ;babble.c: 83:     CLC1GLS1=0;
+[e = _CLC1GLS1 -> -> 0 `i `uc ]
 "84
-[; ;babble.c: 84:     CLC1SEL1=5;
-[e = _CLC1SEL1 -> -> 5 `i `uc ]
+[; ;babble.c: 84:     CLC1GLS2=0x20;
+[e = _CLC1GLS2 -> -> 32 `i `uc ]
 "85
-[; ;babble.c: 85:     CLC1POL=0;
-[e = _CLC1POL -> -> 0 `i `uc ]
+[; ;babble.c: 85:     CLC1GLS3=0;
+[e = _CLC1GLS3 -> -> 0 `i `uc ]
 "86
-[; ;babble.c: 86:     CLC1CON=0xC1;
-[e = _CLC1CON -> -> 193 `i `uc ]
+[; ;babble.c: 86:     CLC1SEL0=3;
+[e = _CLC1SEL0 -> -> 3 `i `uc ]
 "87
-[; ;babble.c: 87:     while (1){
+[; ;babble.c: 87:     CLC1SEL1=5;
+[e = _CLC1SEL1 -> -> 5 `i `uc ]
+"88
+[; ;babble.c: 88:     CLC1POL=0;
+[e = _CLC1POL -> -> 0 `i `uc ]
+"89
+[; ;babble.c: 89:     CLC1CON=0xC1;
+[e = _CLC1CON -> -> 193 `i `uc ]
+"90
+[; ;babble.c: 90:     while (1){
 [e :U 151 ]
 {
-"88
-[; ;babble.c: 88:         NCO1INC=(16384);
-[e = _NCO1INC -> -> -> 16384 `i `m `um ]
-"89
-[; ;babble.c: 89:         wait_trigger();
-[e ( _wait_trigger ..  ]
-"90
-[; ;babble.c: 90:         babble_time=1000;
-[e = _babble_time -> -> 1000 `i `ui ]
 "91
-[; ;babble.c: 91:         while (babble_time--){
+[; ;babble.c: 91:         NCO1INC=(16384);
+[e = _NCO1INC -> -> -> 16384 `i `m `um ]
+"92
+[; ;babble.c: 92:         wait_trigger();
+[e ( _wait_trigger ..  ]
+"93
+[; ;babble.c: 93:         babble_time=90;
+[e = _babble_time -> -> 90 `i `ui ]
+"94
+[; ;babble.c: 94:         while (babble_time--){
 [e $U 153  ]
 [e :U 154 ]
 {
-"92
-[; ;babble.c: 92:             NCO1INC=read_cap()+(16384);
+"95
+[; ;babble.c: 95:             NCO1INC=read_cap()+(16384);
 [e = _NCO1INC -> + ( _read_cap ..  -> -> 16384 `i `ui `um ]
-"93
-[; ;babble.c: 93:             msec_delay(100);
-[e ( _msec_delay (1 -> -> 100 `i `ui ]
-"94
-[; ;babble.c: 94:         }
+"96
+[; ;babble.c: 96:             msec_delay(32);
+[e ( _msec_delay (1 -> -> 32 `i `ui ]
+"97
+[; ;babble.c: 97:         }
 }
 [e :U 153 ]
-"91
-[; ;babble.c: 91:         while (babble_time--){
+"94
+[; ;babble.c: 94:         while (babble_time--){
 [e $ != -- _babble_time -> -> 1 `i `ui -> -> 0 `i `ui 154  ]
 [e :U 155 ]
-"95
-[; ;babble.c: 95:     }
+"98
+[; ;babble.c: 98:     }
 }
 [e :U 150 ]
 [e $U 151  ]
 [e :U 152 ]
-"96
-[; ;babble.c: 96:     return;
+"99
+[; ;babble.c: 99:     return;
 [e $UE 149  ]
-"97
-[; ;babble.c: 97: }
+"100
+[; ;babble.c: 100: }
 [e :UE 149 ]
 }

@@ -11,16 +11,16 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/xcXMkOfHK.o
-end_init CODE 0 0 0 1 2
-config CONFIG 4 2007 2007 1 2
 $dist/default/production/babble.X.production.o
 cinit CODE 0 1FE 1FE 2 2
-text1 CODE 0 16E 16E 4 2
-text2 CODE 0 186 186 18 2
-text3 CODE 0 172 172 14 2
-maintext CODE 0 19E 19E 60 2
+text1 CODE 0 172 172 4 2
+text2 CODE 0 189 189 1A 2
+text3 CODE 0 176 176 13 2
+maintext CODE 0 1A3 1A3 5B 2
 cstackBANK0 BANK0 1 40 40 A 1
+config CONFIG 4 2007 2007 1 2
+$/tmp/xcXaOFjAD.o
+end_init CODE 0 0 0 1 2
 config CONFIG 4 2007 2007 1 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -30,14 +30,14 @@ config CONFIG 4 2007 2007 1 2
 %UNUSED
 RAM 4A-7D 1
 BANK0 4A-7D 1
-CONST 1-16D 2
-ENTRY 1-16D 2
+CONST 1-171 2
+ENTRY 1-171 2
 IDLOC 2000-2003 2
 STACK 4A-7D 1
-CODE 1-16D 2
+CODE 1-171 2
 SFR0 0-3F 1
-STRCODE 1-16D 2
-STRING 1-16D 2
+STRCODE 1-171 2
+STRING 1-171 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -52,64 +52,66 @@ STRING 1-16D 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production/babble.X.production.o
-1FE cinit CODE >302:/tmp/xcXdKcdOP.s
-1FE cinit CODE >305:/tmp/xcXdKcdOP.s
-1FE cinit CODE >311:/tmp/xcXdKcdOP.s
-1FE cinit CODE >313:/tmp/xcXdKcdOP.s
-1FF cinit CODE >314:/tmp/xcXdKcdOP.s
-172 text3 CODE >28:/home/jacques/MPLABXProjects/babble.X/babble.c
-172 text3 CODE >29:/home/jacques/MPLABXProjects/babble.X/babble.c
-173 text3 CODE >31:/home/jacques/MPLABXProjects/babble.X/babble.c
-174 text3 CODE >32:/home/jacques/MPLABXProjects/babble.X/babble.c
-175 text3 CODE >33:/home/jacques/MPLABXProjects/babble.X/babble.c
-176 text3 CODE >34:/home/jacques/MPLABXProjects/babble.X/babble.c
-177 text3 CODE >29:/home/jacques/MPLABXProjects/babble.X/babble.c
-185 text3 CODE >36:/home/jacques/MPLABXProjects/babble.X/babble.c
-186 text2 CODE >38:/home/jacques/MPLABXProjects/babble.X/babble.c
-186 text2 CODE >40:/home/jacques/MPLABXProjects/babble.X/babble.c
-187 text2 CODE >41:/home/jacques/MPLABXProjects/babble.X/babble.c
-188 text2 CODE >42:/home/jacques/MPLABXProjects/babble.X/babble.c
-189 text2 CODE >43:/home/jacques/MPLABXProjects/babble.X/babble.c
-18A text2 CODE >44:/home/jacques/MPLABXProjects/babble.X/babble.c
-191 text2 CODE >45:/home/jacques/MPLABXProjects/babble.X/babble.c
-195 text2 CODE >46:/home/jacques/MPLABXProjects/babble.X/babble.c
-199 text2 CODE >47:/home/jacques/MPLABXProjects/babble.X/babble.c
-19D text2 CODE >48:/home/jacques/MPLABXProjects/babble.X/babble.c
-16E text1 CODE >50:/home/jacques/MPLABXProjects/babble.X/babble.c
-16E text1 CODE >51:/home/jacques/MPLABXProjects/babble.X/babble.c
-171 text1 CODE >56:/home/jacques/MPLABXProjects/babble.X/babble.c
-19E maintext CODE >58:/home/jacques/MPLABXProjects/babble.X/babble.c
-19E maintext CODE >60:/home/jacques/MPLABXProjects/babble.X/babble.c
-1A2 maintext CODE >61:/home/jacques/MPLABXProjects/babble.X/babble.c
-1A3 maintext CODE >62:/home/jacques/MPLABXProjects/babble.X/babble.c
-1A5 maintext CODE >63:/home/jacques/MPLABXProjects/babble.X/babble.c
-1A9 maintext CODE >64:/home/jacques/MPLABXProjects/babble.X/babble.c
-1AD maintext CODE >65:/home/jacques/MPLABXProjects/babble.X/babble.c
-1B1 maintext CODE >66:/home/jacques/MPLABXProjects/babble.X/babble.c
-1B2 maintext CODE >67:/home/jacques/MPLABXProjects/babble.X/babble.c
-1B4 maintext CODE >68:/home/jacques/MPLABXProjects/babble.X/babble.c
-1B5 maintext CODE >70:/home/jacques/MPLABXProjects/babble.X/babble.c
-1B7 maintext CODE >71:/home/jacques/MPLABXProjects/babble.X/babble.c
-1B9 maintext CODE >72:/home/jacques/MPLABXProjects/babble.X/babble.c
-1BB maintext CODE >73:/home/jacques/MPLABXProjects/babble.X/babble.c
+1FE cinit CODE >302:/tmp/xcXLlnHhF.s
+1FE cinit CODE >305:/tmp/xcXLlnHhF.s
+1FE cinit CODE >311:/tmp/xcXLlnHhF.s
+1FE cinit CODE >313:/tmp/xcXLlnHhF.s
+1FF cinit CODE >314:/tmp/xcXLlnHhF.s
+176 text3 CODE >28:/home/jacques/MPLABXProjects/babble.X/babble.c
+176 text3 CODE >29:/home/jacques/MPLABXProjects/babble.X/babble.c
+178 text3 CODE >30:/home/jacques/MPLABXProjects/babble.X/babble.c
+183 text3 CODE >32:/home/jacques/MPLABXProjects/babble.X/babble.c
+184 text3 CODE >33:/home/jacques/MPLABXProjects/babble.X/babble.c
+185 text3 CODE >34:/home/jacques/MPLABXProjects/babble.X/babble.c
+186 text3 CODE >35:/home/jacques/MPLABXProjects/babble.X/babble.c
+187 text3 CODE >36:/home/jacques/MPLABXProjects/babble.X/babble.c
+188 text3 CODE >30:/home/jacques/MPLABXProjects/babble.X/babble.c
+189 text2 CODE >40:/home/jacques/MPLABXProjects/babble.X/babble.c
+189 text2 CODE >42:/home/jacques/MPLABXProjects/babble.X/babble.c
+18B text2 CODE >43:/home/jacques/MPLABXProjects/babble.X/babble.c
+18C text2 CODE >44:/home/jacques/MPLABXProjects/babble.X/babble.c
+18D text2 CODE >45:/home/jacques/MPLABXProjects/babble.X/babble.c
+18E text2 CODE >46:/home/jacques/MPLABXProjects/babble.X/babble.c
+18F text2 CODE >47:/home/jacques/MPLABXProjects/babble.X/babble.c
+196 text2 CODE >48:/home/jacques/MPLABXProjects/babble.X/babble.c
+19A text2 CODE >49:/home/jacques/MPLABXProjects/babble.X/babble.c
+19E text2 CODE >50:/home/jacques/MPLABXProjects/babble.X/babble.c
+1A2 text2 CODE >51:/home/jacques/MPLABXProjects/babble.X/babble.c
+172 text1 CODE >53:/home/jacques/MPLABXProjects/babble.X/babble.c
+172 text1 CODE >54:/home/jacques/MPLABXProjects/babble.X/babble.c
+175 text1 CODE >59:/home/jacques/MPLABXProjects/babble.X/babble.c
+1A3 maintext CODE >61:/home/jacques/MPLABXProjects/babble.X/babble.c
+1A3 maintext CODE >63:/home/jacques/MPLABXProjects/babble.X/babble.c
+1A7 maintext CODE >64:/home/jacques/MPLABXProjects/babble.X/babble.c
+1A8 maintext CODE >65:/home/jacques/MPLABXProjects/babble.X/babble.c
+1AA maintext CODE >66:/home/jacques/MPLABXProjects/babble.X/babble.c
+1AE maintext CODE >67:/home/jacques/MPLABXProjects/babble.X/babble.c
+1B2 maintext CODE >68:/home/jacques/MPLABXProjects/babble.X/babble.c
+1B6 maintext CODE >69:/home/jacques/MPLABXProjects/babble.X/babble.c
+1B7 maintext CODE >70:/home/jacques/MPLABXProjects/babble.X/babble.c
+1B9 maintext CODE >71:/home/jacques/MPLABXProjects/babble.X/babble.c
+1BA maintext CODE >73:/home/jacques/MPLABXProjects/babble.X/babble.c
 1BC maintext CODE >74:/home/jacques/MPLABXProjects/babble.X/babble.c
-1BE maintext CODE >76:/home/jacques/MPLABXProjects/babble.X/babble.c
-1C0 maintext CODE >77:/home/jacques/MPLABXProjects/babble.X/babble.c
-1C2 maintext CODE >79:/home/jacques/MPLABXProjects/babble.X/babble.c
-1C4 maintext CODE >80:/home/jacques/MPLABXProjects/babble.X/babble.c
-1C5 maintext CODE >81:/home/jacques/MPLABXProjects/babble.X/babble.c
+1BE maintext CODE >75:/home/jacques/MPLABXProjects/babble.X/babble.c
+1C0 maintext CODE >76:/home/jacques/MPLABXProjects/babble.X/babble.c
+1C1 maintext CODE >77:/home/jacques/MPLABXProjects/babble.X/babble.c
+1C3 maintext CODE >79:/home/jacques/MPLABXProjects/babble.X/babble.c
+1C5 maintext CODE >80:/home/jacques/MPLABXProjects/babble.X/babble.c
 1C7 maintext CODE >82:/home/jacques/MPLABXProjects/babble.X/babble.c
-1C8 maintext CODE >83:/home/jacques/MPLABXProjects/babble.X/babble.c
+1C9 maintext CODE >83:/home/jacques/MPLABXProjects/babble.X/babble.c
 1CA maintext CODE >84:/home/jacques/MPLABXProjects/babble.X/babble.c
 1CC maintext CODE >85:/home/jacques/MPLABXProjects/babble.X/babble.c
 1CD maintext CODE >86:/home/jacques/MPLABXProjects/babble.X/babble.c
-1CF maintext CODE >88:/home/jacques/MPLABXProjects/babble.X/babble.c
-1D5 maintext CODE >89:/home/jacques/MPLABXProjects/babble.X/babble.c
-1D6 maintext CODE >90:/home/jacques/MPLABXProjects/babble.X/babble.c
-1DA maintext CODE >91:/home/jacques/MPLABXProjects/babble.X/babble.c
-1DB maintext CODE >92:/home/jacques/MPLABXProjects/babble.X/babble.c
-1E9 maintext CODE >93:/home/jacques/MPLABXProjects/babble.X/babble.c
-1EE maintext CODE >91:/home/jacques/MPLABXProjects/babble.X/babble.c
+1CF maintext CODE >87:/home/jacques/MPLABXProjects/babble.X/babble.c
+1D1 maintext CODE >88:/home/jacques/MPLABXProjects/babble.X/babble.c
+1D2 maintext CODE >89:/home/jacques/MPLABXProjects/babble.X/babble.c
+1D4 maintext CODE >91:/home/jacques/MPLABXProjects/babble.X/babble.c
+1DA maintext CODE >92:/home/jacques/MPLABXProjects/babble.X/babble.c
+1DB maintext CODE >93:/home/jacques/MPLABXProjects/babble.X/babble.c
+1DF maintext CODE >94:/home/jacques/MPLABXProjects/babble.X/babble.c
+1EA maintext CODE >95:/home/jacques/MPLABXProjects/babble.X/babble.c
+1F8 maintext CODE >96:/home/jacques/MPLABXProjects/babble.X/babble.c
+1FD maintext CODE >94:/home/jacques/MPLABXProjects/babble.X/babble.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -139,37 +141,37 @@ __Hstrings 0 0 ABS 0 strings -
 _LATA 7 0 ABS 0 - dist/default/production/babble.X.production.o
 _TMR0 1 0 ABS 0 - dist/default/production/babble.X.production.o
 _WPUA 9 0 ABS 0 - dist/default/production/babble.X.production.o
-___sp 0 0 STACK 2 stack /tmp/xcXMkOfHK.o
-_main 33C 0 CODE 0 maintext dist/default/production/babble.X.production.o
+___sp 0 0 STACK 2 stack /tmp/xcXaOFjAD.o
+_main 346 0 CODE 0 maintext dist/default/production/babble.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production/babble.X.production.o
-start 0 0 CODE 0 init /tmp/xcXMkOfHK.o
+start 0 0 CODE 0 init /tmp/xcXaOFjAD.o
 __size_of_main 0 0 ABS 0 - dist/default/production/babble.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab /tmp/xcXMkOfHK.o
-intlevel1 0 0 ENTRY 0 functab /tmp/xcXMkOfHK.o
-intlevel2 0 0 ENTRY 0 functab /tmp/xcXMkOfHK.o
-intlevel3 0 0 ENTRY 0 functab /tmp/xcXMkOfHK.o
-intlevel4 0 0 ENTRY 0 functab /tmp/xcXMkOfHK.o
-intlevel5 0 0 ENTRY 0 functab /tmp/xcXMkOfHK.o
+intlevel0 0 0 ENTRY 0 functab /tmp/xcXaOFjAD.o
+intlevel1 0 0 ENTRY 0 functab /tmp/xcXaOFjAD.o
+intlevel2 0 0 ENTRY 0 functab /tmp/xcXaOFjAD.o
+intlevel3 0 0 ENTRY 0 functab /tmp/xcXaOFjAD.o
+intlevel4 0 0 ENTRY 0 functab /tmp/xcXaOFjAD.o
+intlevel5 0 0 ENTRY 0 functab /tmp/xcXaOFjAD.o
 wtemp0 7E 0 ABS 0 - dist/default/production/babble.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
 _ANSELA 8 0 ABS 0 - dist/default/production/babble.X.production.o
-_wait_trigger 2DC 0 CODE 0 text1 dist/default/production/babble.X.production.o
+_wait_trigger 2E4 0 CODE 0 text1 dist/default/production/babble.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 _NCO1CLK 2E 0 ABS 0 - dist/default/production/babble.X.production.o
 _NCO1CON 2D 0 ABS 0 - dist/default/production/babble.X.production.o
 _NCO1INC 2A 0 ABS 0 - dist/default/production/babble.X.production.o
 _OPTION_REG E 0 ABS 0 - dist/default/production/babble.X.production.o
-___stackhi 0 0 ABS 0 - /tmp/xcXMkOfHK.o
-___stacklo 0 0 ABS 0 - /tmp/xcXMkOfHK.o
+___stackhi 0 0 ABS 0 - /tmp/xcXaOFjAD.o
+___stacklo 0 0 ABS 0 - /tmp/xcXaOFjAD.o
 start_initialization 3FC 0 CODE 0 cinit dist/default/production/babble.X.production.o
 _OSCCON 10 0 ABS 0 - dist/default/production/babble.X.production.o
 __size_of_wait_trigger 0 0 ABS 0 - dist/default/production/babble.X.production.o
-_msec_delay 2E4 0 CODE 0 text3 dist/default/production/babble.X.production.o
+_msec_delay 2EC 0 CODE 0 text3 dist/default/production/babble.X.production.o
 __pcstackBANK0 40 0 BANK0 1 cstackBANK0 dist/default/production/babble.X.production.o
-__end_of_wait_trigger 2E4 0 CODE 0 text1 dist/default/production/babble.X.production.o
-___int_sp 0 0 STACK 2 stack /tmp/xcXMkOfHK.o
+__end_of_wait_trigger 2EC 0 CODE 0 text1 dist/default/production/babble.X.production.o
+___int_sp 0 0 STACK 2 stack /tmp/xcXaOFjAD.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hcinit 400 0 CODE 0 cinit -
 __Hstack 0 0 STACK 2 stack -
@@ -179,7 +181,7 @@ __Hconfig 4010 0 CONFIG 4 config -
 __Lbank0 0 0 ABS 0 bank0 -
 __Lcinit 3FC 0 CODE 0 cinit -
 __Lstack 0 0 STACK 2 stack -
-__end_of_msec_delay 30C 0 CODE 0 text3 dist/default/production/babble.X.production.o
+__end_of_msec_delay 312 0 CODE 0 text3 dist/default/production/babble.X.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
 __Hinit 0 0 CODE 0 init -
@@ -205,12 +207,12 @@ __S2 0 0 ABS 0 - -
 main@babble_time 48 0 BANK0 1 cstackBANK0 dist/default/production/babble.X.production.o
 __size_of_read_cap 0 0 ABS 0 - dist/default/production/babble.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec /tmp/xcXMkOfHK.o
-__pmaintext 33C 0 CODE 0 maintext dist/default/production/babble.X.production.o
+reset_vec 0 0 CODE 0 reset_vec /tmp/xcXaOFjAD.o
+__pmaintext 346 0 CODE 0 maintext dist/default/production/babble.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
-_read_cap 30C 0 CODE 0 text2 dist/default/production/babble.X.production.o
-__end_of_read_cap 33C 0 CODE 0 text2 dist/default/production/babble.X.production.o
+_read_cap 312 0 CODE 0 text2 dist/default/production/babble.X.production.o
+__end_of_read_cap 346 0 CODE 0 text2 dist/default/production/babble.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
@@ -224,9 +226,9 @@ __Hintentry 0 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 0 0 CODE 0 reset_vec -
 __size_of_msec_delay 0 0 ABS 0 - dist/default/production/babble.X.production.o
-__ptext1 2DC 0 CODE 0 text1 dist/default/production/babble.X.production.o
-__ptext2 30C 0 CODE 0 text2 dist/default/production/babble.X.production.o
-__ptext3 2E4 0 CODE 0 text3 dist/default/production/babble.X.production.o
+__ptext1 2E4 0 CODE 0 text1 dist/default/production/babble.X.production.o
+__ptext2 312 0 CODE 0 text2 dist/default/production/babble.X.production.o
+__ptext3 2EC 0 CODE 0 text3 dist/default/production/babble.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
@@ -272,10 +274,10 @@ msec_delay@msec 40 0 BANK0 1 cstackBANK0 dist/default/production/babble.X.produc
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cinit 0 1FE 3FC 2 2
-text1 0 16E 2DC 4 2
-text2 0 186 30C 18 2
-text3 0 172 2E4 14 2
-maintext 0 19E 33C 60 2
+text1 0 172 2E4 4 2
+text2 0 189 312 1A 2
+text3 0 176 2EC 13 2
+maintext 0 1A3 346 5B 2
 cstackBANK0 1 40 40 A 1
 reset_vec 0 0 0 1 2
 # %NOTES Section
